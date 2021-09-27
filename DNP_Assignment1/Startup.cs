@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DNP_Assignment1.Data;
+using DNP_Assignment1.Persistence;
 
 namespace DNP_Assignment1
 {
@@ -29,6 +30,7 @@ namespace DNP_Assignment1
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<FileContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

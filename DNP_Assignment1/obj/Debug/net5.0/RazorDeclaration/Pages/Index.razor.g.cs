@@ -82,6 +82,13 @@ using DNP_Assignment1.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
+using DNP_Assignment1.Persistence;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
