@@ -16,6 +16,11 @@ namespace DNP_Assignment1.Persistence
 
         public FileContext()
         {
+            if (File.Exists(familiesFile))
+            {
+                Console.Out.WriteLine("Existuje");
+                Console.Out.WriteLine(adultsFile);
+            }
             Families = File.Exists(familiesFile) ? ReadData<Family>(familiesFile) : new List<Family>();
             Adults = File.Exists(adultsFile) ? ReadData<Adult>(adultsFile) : new List<Adult>();
         }
@@ -48,6 +53,7 @@ namespace DNP_Assignment1.Persistence
             using (StreamWriter outputFile = new StreamWriter(adultsFile, false))
             {
                 outputFile.Write(jsonAdults);
+                Console.Out.WriteLine(jsonAdults);
             }
         }
     }

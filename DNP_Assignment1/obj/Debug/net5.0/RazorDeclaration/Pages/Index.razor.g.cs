@@ -8,7 +8,6 @@ namespace DNP_Assignment1.Pages
 {
     #line hidden
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
@@ -84,6 +83,20 @@ using DNP_Assignment1.Shared;
 #nullable disable
 #nullable restore
 #line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
+using Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
+using System.Collections.Generic;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
 using DNP_Assignment1.Persistence;
 
 #line default
@@ -97,6 +110,44 @@ using DNP_Assignment1.Persistence;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 16 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
+      
+    public Adult _adult = new()
+    {
+        Id = 293346,
+        Age = 21,
+        Height = 180,
+        Sex = "M",
+        Weight = 73,
+        EyeColor = "brown",
+        FirstName = "Radovan",
+        HairColor = "brown",
+        LastName = "Santa", JobTitle = new Job()
+        {
+            JobTitle = "Student",
+            Salary = 15000
+        }
+    };
+
+    protected override void OnInitialized()
+    {
+
+    }
+
+
+    private void AddButton()
+    {
+        _fileContext.Adults.Insert(_fileContext.Adults.Count,_adult);
+        _fileContext.SaveChanges();
+        Console.Out.WriteLine(_fileContext.Adults.Count);
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext _fileContext { get; set; }
     }
 }
 #pragma warning restore 1591
