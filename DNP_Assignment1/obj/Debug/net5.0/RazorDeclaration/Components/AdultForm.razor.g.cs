@@ -112,6 +112,9 @@ using DNP_Assignment1.Persistence;
 #nullable restore
 #line 54 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
        
+    [Parameter]  
+    public string MyParameter { get; set; }  
+    
     public Adult adult = new()
     {
         Id = 0,

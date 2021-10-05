@@ -44,7 +44,7 @@
             <label for="jobTitleInput">Job Title</label>
             <InputText class="form-control" id="jobTitleInput" @bind-Value="adult.JobTitle.JobTitle"/></div>
         <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">@MyParameter</button>
         </div>
     </EditForm>
     <div>@success</div>
@@ -52,6 +52,9 @@
 </div>
 
 @code {
+    [Parameter]  
+    public string MyParameter { get; set; }  
+    
     public Adult adult = new()
     {
         Id = 0,
