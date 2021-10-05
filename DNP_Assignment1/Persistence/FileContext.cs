@@ -27,11 +27,12 @@ namespace DNP_Assignment1.Persistence
 
         private IList<T> ReadData<T>(string s)
         {
-            using (var jsonReader = File.OpenText(familiesFile))
+            using (var jsonReader = File.OpenText(adultsFile))
             {
                 return JsonSerializer.Deserialize<List<T>>(jsonReader.ReadToEnd());
             }
         }
+        
 
         public void SaveChanges()
         {
@@ -55,6 +56,13 @@ namespace DNP_Assignment1.Persistence
                 outputFile.Write(jsonAdults);
                 Console.Out.WriteLine(jsonAdults);
             }
+        }
+
+        public void AddAdult(Adult adult)
+        {
+            Console.Out.WriteLine(ReadData <Adult>("s"));
+            Adults.Add(adult);
+            SaveChanges();
         }
     }
 }

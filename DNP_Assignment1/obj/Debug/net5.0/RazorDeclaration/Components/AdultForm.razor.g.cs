@@ -4,13 +4,13 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace DNP_Assignment1.Pages
+namespace DNP_Assignment1.Components
 {
     #line hidden
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using Microsoft.AspNetCore.Components;
 #nullable restore
 #line 1 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/_Imports.razor"
 using System.Net.Http;
@@ -82,35 +82,27 @@ using DNP_Assignment1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
+#line 1 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
+using Microsoft.AspNetCore.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
 using Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
-using System.Collections.Generic;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
-using DNP_Assignment1.Components;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
+#line 3 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
 using DNP_Assignment1.Persistence;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
-    public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class AdultForm : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -118,35 +110,30 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 17 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
-      
-    public Adult _adult = new()
+#line 54 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
+       
+    public Adult adult = new()
     {
-        Id = 293346,
-        Age = 21,
-        Height = 180,
-        Sex = "M",
-        Weight = 73,
-        EyeColor = "brown",
-        FirstName = "Radovan",
-        HairColor = "brown",
-        LastName = "Santa", JobTitle = new Job()
+        Id = 0,
+        Age = 0,
+        Height = 0,
+        Sex = null,
+        Weight = 0,
+        EyeColor = null,
+        FirstName = null,
+        HairColor = null,
+        LastName = null, JobTitle = new Job()
         {
-            JobTitle = "Student",
-            Salary = 15000
+            JobTitle = null,
+            Salary = 0
         }
     };
-
-    protected override void OnInitialized()
+    private string success = "";
+    public void HandleValidSubmit()
     {
-
-    }
-
-
-    private void AddButton()
-    {
-        _fileContext.AddAdult(_adult);
-        Console.Out.WriteLine(_fileContext.Adults.Count);
+        success = adult.FirstName;
+        _fileContext.AddAdult(adult);
+        
     }
 
 
