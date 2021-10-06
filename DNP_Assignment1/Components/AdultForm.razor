@@ -7,23 +7,23 @@
     <div class="card-header">
         Add an adult
     </div>
-<div class="card-body">
+<div style="width: 100%" class="card-body">
     <EditForm Model="@_adult" OnValidSubmit="@HandleValidSubmit">
         <div class="form-group">
             <label for="idInput">ID</label>
             <InputNumber class="form-control" id="idInput" @bind-Value="_adult.Id" /></div>
         <div class="form-group">
             <label for="firstNameInput">First Name</label>
-            <InputText class="form-control" id="firstNameInput" @bind-Value="_adult.FirstName" /></div>
+            <InputText placeholder="Enter first name" class="form-control" id="firstNameInput" @bind-Value="_adult.FirstName" /></div>
         <div class="form-group">
             <label for="lastNameInput">Last Name</label>
-            <InputText class="form-control" id="lastNameInput" @bind-Value="_adult.LastName" /></div>
+            <InputText placeholder="Enter last name" class="form-control" id="lastNameInput" @bind-Value="_adult.LastName" /></div>
         <div class="form-group">
             <label for="hairColorInput">Hair Color</label>
-            <InputText class="form-control" id="hairColorInput" @bind-Value="_adult.HairColor"/></div>
+            <InputText placeholder="Enter color of hair" class="form-control" id="hairColorInput" @bind-Value="_adult.HairColor"/></div>
         <div class="form-group">
             <label for="eyeColorInput">Eye Color</label>
-            <InputText class="form-control" id="eyeColorInput" @bind-Value="_adult.EyeColor"/></div>
+            <InputText placeholder="Enter color of eye" class="form-control" id="eyeColorInput" @bind-Value="_adult.EyeColor"/></div>
         <div class="form-group">
             <label for="ageInput">Age</label>
             <InputNumber class="form-control" id="ageInput" @bind-Value="_adult.Age"/></div>
@@ -35,21 +35,27 @@
             <InputNumber class="form-control" id="heightInput" @bind-Value="_adult.Height"/></div>
         <div class="form-group">
             <label for="sexInput">Sex</label>
-            <InputText class="form-control" id="sexInput" @bind-Value="_adult.Sex"/></div>
+            <InputText placeholder="Enter your sex" class="form-control" id="sexInput" @bind-Value="_adult.Sex"/></div>
         <div class="form-group">
             <label for="salaryInput">Salary</label>
             <InputNumber class="form-control" id="salaryInput" @bind-Value="_adult.JobTitle.Salary"/></div>
         <div class="form-group">
             <label for="jobTitleInput">Job Title</label>
-            <InputText class="form-control" id="jobTitleInput" @bind-Value="_adult.JobTitle.JobTitle"/></div>
+            <InputText placeholder="Enter title of your job" class="form-control" id="jobTitleInput" @bind-Value="_adult.JobTitle.JobTitle"/></div>
         <div>
             <button type="submit" class="btn btn-primary">Add Adult</button>
         </div>
+        <p>@error</p>
     </EditForm>
 </div>
 </div>
 
 @code {
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
+    string error = "";
+    
     private Adult _adult = new()
     {
         Id = 0,
@@ -66,9 +72,30 @@
             Salary = 0
         }
     };
-    
+
     private void HandleValidSubmit()
     {
-        _fileContext.AddAdult(_adult);
+        if (_adult.Id==0 ||
+            _adult.FirstName==null ||
+            _adult.LastName==null ||
+            _adult.HairColor==null ||
+            _adult.EyeColor==null ||
+            _adult.Age ==0 ||
+            _adult.Weight ==0 ||
+            _adult.Height==0 ||
+            _adult.Sex==null ||
+            _adult.JobTitle.Salary==0 ||
+            _adult.JobTitle.JobTitle==null)
+        {
+            error = "Missing inputs";
+        }
+        else
+        {
+            _fileContext.AddAdult(_adult);
+            NavigationManager.NavigateTo("/", forceLoad: true);
+        }
+        
+        
+        
     }
 }

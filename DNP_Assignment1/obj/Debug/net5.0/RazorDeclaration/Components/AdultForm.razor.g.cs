@@ -110,8 +110,13 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 52 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
+#line 53 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
        
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
+    string error = "";
+    
     private Adult _adult = new()
     {
         Id = 0,
@@ -128,10 +133,31 @@ using DNP_Assignment1.Persistence;
             Salary = 0
         }
     };
-    
+
     private void HandleValidSubmit()
     {
-        _fileContext.AddAdult(_adult);
+        if (_adult.Id==0 ||
+            _adult.FirstName==null ||
+            _adult.LastName==null ||
+            _adult.HairColor==null ||
+            _adult.EyeColor==null ||
+            _adult.Age ==0 ||
+            _adult.Weight ==0 ||
+            _adult.Height==0 ||
+            _adult.Sex==null ||
+            _adult.JobTitle.Salary==0 ||
+            _adult.JobTitle.JobTitle==null)
+        {
+            error = "Missing inputs";
+        }
+        else
+        {
+            _fileContext.AddAdult(_adult);
+            NavigationManager.NavigateTo("/", forceLoad: true);
+        }
+        
+        
+        
     }
 
 #line default

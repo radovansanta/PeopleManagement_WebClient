@@ -90,7 +90,7 @@ using DNP_Assignment1.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 22 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Shared/NavMenu.razor"
+#line 27 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Shared/NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

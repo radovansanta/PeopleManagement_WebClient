@@ -1,13 +1,25 @@
-@page "/"
+@page "/add_people"
 @using Models
 @using System.Collections.Generic;
 @using DNP_Assignment1.Components
 @using DNP_Assignment1.Persistence
 @inject FileContext _fileContext;
 
-
-<input placeholder="Enter your text"  value="@Value" @oninput="@OnInputChange"/>
-
+<h1>All Adults</h1>
+<h5><span style="color: white" class="badge bg-secondary">Search by:</span></h5>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <input class="form-control" placeholder="First name"  value="@Value" @oninput="@OnInputChange"/>
+    </div>
+    <div class="col-sm">
+      <input class="form-control" placeholder="Last name"  value="@Value" @oninput="@OnInputChange"/>
+    </div>
+    <div class="col-sm">
+      <input class="form-control" placeholder="ID"  value="@Value" @oninput="@OnInputChange"/>
+    </div>
+  </div>
+</div>
 
 
 <div class="card-columns">

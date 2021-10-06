@@ -16,17 +16,17 @@
   },
   {
     "JobTitle": {
-      "JobTitle": "Army",
-      "Salary": 5000
+      "JobTitle": "Student",
+      "Salary": 13762
     },
-    "Id": 302936,
-    "FirstName": "Matus",
-    "LastName": "Soltes",
-    "HairColor": "blond",
-    "EyeColor": "blue",
-    "Age": 20,
-    "Weight": 75,
-    "Height": 177,
+    "Id": 7654567,
+    "FirstName": "Ludomil",
+    "LastName": "Horovsky",
+    "HairColor": "hnede",
+    "EyeColor": "hnede",
+    "Age": 21,
+    "Weight": 76,
+    "Height": 175,
     "Sex": "M"
   }
 ]
