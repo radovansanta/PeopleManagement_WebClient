@@ -82,6 +82,13 @@ using DNP_Assignment1.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Counter.razor"
+using DNP_Assignment1.Components;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
     public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -90,20 +97,6 @@ using DNP_Assignment1.Shared;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 9 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Counter.razor"
-       
-    private int currentCount = 0;
-
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
-
-
-#line default
-#line hidden
-#nullable disable
     }
 }
 #pragma warning restore 1591

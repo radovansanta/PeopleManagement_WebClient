@@ -13,20 +13,5 @@
     "Weight": 73,
     "Height": 180,
     "Sex": "M"
-  },
-  {
-    "JobTitle": {
-      "JobTitle": "J",
-      "Salary": 65678
-    },
-    "Id": 293367,
-    "FirstName": "Test",
-    "LastName": "Testovy",
-    "HairColor": "henna",
-    "EyeColor": "modra",
-    "Age": 21,
-    "Weight": 12,
-    "Height": 21,
-    "Sex": "M"
   }
 ]
