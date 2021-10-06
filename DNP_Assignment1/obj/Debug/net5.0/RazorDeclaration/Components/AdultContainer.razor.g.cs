@@ -11,6 +11,7 @@ namespace DNP_Assignment1.Components
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Components;
 #nullable restore
 #line 1 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/_Imports.razor"
 using System.Net.Http;
@@ -82,27 +83,20 @@ using DNP_Assignment1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
-using Microsoft.AspNetCore.Components;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
+#line 1 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultContainer.razor"
 using Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
+#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultContainer.razor"
 using DNP_Assignment1.Persistence;
 
 #line default
 #line hidden
 #nullable disable
-    public partial class AdultForm : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class AdultContainer : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -110,29 +104,21 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 52 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
+#line 61 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultContainer.razor"
        
-    private Adult _adult = new()
-    {
-        Id = 0,
-        Age = 0,
-        Height = 0,
-        Sex = null,
-        Weight = 0,
-        EyeColor = null,
-        FirstName = null,
-        HairColor = null,
-        LastName = null, JobTitle = new Job()
-        {
-            JobTitle = null,
-            Salary = 0
-        }
-    };
+    [Parameter]  
+    public Adult Adult { get; set; }
     
-    private void HandleValidSubmit()
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
+    private void HandleDelete()
     {
-        _fileContext.AddAdult(_adult);
+        _fileContext.DeleteAdult(Adult);
+        NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+
     }
+    
 
 #line default
 #line hidden
