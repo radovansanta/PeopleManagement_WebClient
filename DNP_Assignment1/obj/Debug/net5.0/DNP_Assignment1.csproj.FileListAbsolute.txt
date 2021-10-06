@@ -59,3 +59,5 @@
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/bin/Debug/net5.0/adults.json
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Components/AdultForm.razor.g.cs
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Components/AdultForm.razor.g.cs
+/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Components/AdultContainer.razor.g.cs
+/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Components/AdultContainer.razor.g.cs

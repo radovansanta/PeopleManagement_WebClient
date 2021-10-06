@@ -110,12 +110,9 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 54 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
+#line 53 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
        
-    [Parameter]  
-    public string MyParameter { get; set; }  
-    
-    public Adult adult = new()
+    private Adult _adult = new()
     {
         Id = 0,
         Age = 0,
@@ -131,14 +128,11 @@ using DNP_Assignment1.Persistence;
             Salary = 0
         }
     };
-    private string success = "";
-    public void HandleValidSubmit()
+    
+    private void HandleValidSubmit()
     {
-        success = adult.FirstName;
-        _fileContext.AddAdult(adult);
-        
+        _fileContext.AddAdult(_adult);
     }
-
 
 #line default
 #line hidden

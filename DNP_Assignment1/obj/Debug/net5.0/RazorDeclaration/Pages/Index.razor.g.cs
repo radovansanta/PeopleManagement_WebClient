@@ -117,42 +117,6 @@ using DNP_Assignment1.Persistence;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 83 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
-      
-    public Adult _adult = new()
-    {
-        Id = 293346,
-        Age = 21,
-        Height = 180,
-        Sex = "M",
-        Weight = 73,
-        EyeColor = "brown",
-        FirstName = "Radovan",
-        HairColor = "brown",
-        LastName = "Santa", JobTitle = new Job()
-        {
-            JobTitle = "Student",
-            Salary = 15000
-        }
-    };
-
-    protected override void OnInitialized()
-    {
-
-    }
-
-
-    private void AddButton()
-    {
-        _fileContext.AddAdult(_adult);
-        Console.Out.WriteLine(_fileContext.Adults.Count);
-    }
-
-
-#line default
-#line hidden
-#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext _fileContext { get; set; }
     }
 }

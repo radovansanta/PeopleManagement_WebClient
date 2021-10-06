@@ -64,5 +64,12 @@ namespace DNP_Assignment1.Persistence
             Adults.Add(adult);
             SaveChanges();
         }
+
+        public void DeleteAdult(Adult adult)
+        {
+            Adults.Remove(adult);
+            Console.Out.Write(adult);
+            SaveChanges();
+        }
     }
 }

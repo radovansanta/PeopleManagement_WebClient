@@ -1,0 +1,75 @@
+@using Models
+@using DNP_Assignment1.Persistence
+@inject FileContext _fileContext;
+<div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@Adult.FirstName @Adult.LastName</h5>
+            <div class="row">
+                <div class="row" style="margin-left: 20px; margin-right: 20px">
+                    <img style="size: 20px; margin-right: 10px" src="..." alt="...">
+                    <p class="card-text">@Adult.Id</p>
+                </div>
+                <div class="row" style="margin-left: 20px; margin-right: 20px">
+                    <img style="size: 20px; margin-right: 10px" src="..." alt="...">
+                    <p class="card-text">@Adult.Sex</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row" style="margin-left: 20px; margin-right: 20px">
+                    <img style="size: 20px; margin-right: 10px" src="..." alt="...">
+                    <p class="card-text">@Adult.JobTitle.JobTitle</p>
+                </div>
+                <div class="row" style="margin-left: 20px; margin-right: 20px">
+                    <img style="size: 20px; margin-right: 10px" src="..." alt="...">
+                    <p class="card-text">@Adult.JobTitle.Salary</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row" style="margin-left: 20px; margin-right: 20px">
+                    <img style="size: 20px; margin-right: 10px" src="..." alt="...">
+                    <p class="card-text">@Adult.EyeColor</p>
+                </div>
+                <div class="row" style="margin-left: 20px; margin-right: 20px">
+                    <img style="size: 20px; margin-right: 10px" src="..." alt="...">
+                    <p class="card-text">@Adult.HairColor</p>
+                </div>
+            </div>
+            <div class="row">
+              
+                <div class="row" style="margin-left: 20px; margin-right: 20px">
+                    <img style="size: 20px; margin-right: 10px" src="..." alt="...">
+                    <p class="card-text">@Adult.Age</p>
+                </div>
+                <div class="row" style="margin-left: 20px; margin-right: 20px">
+                    <img style="size: 20px; margin-right: 10px" src="..." alt="...">
+                    <p class="card-text">@Adult.Weight</p>
+                </div>
+                <div class="row" style="margin-left: 20px; margin-right: 20px">
+                    <img style="size: 20px; margin-right: 10px" src="..." alt="...">
+                    <p class="card-text">@Adult.Height</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <button @onclick="HandleDelete" style="margin-left: 30px; margin-right: 10px; margin-top: 10px" type="button" class="btn btn-danger btn-sm">Delete</button>
+                    <button style="margin-top: 10px" type="button" class="btn btn-warning btn-sm">Warning</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@code {
+    [Parameter]  
+    public Adult Adult { get; set; }
+    
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
+    private void HandleDelete()
+    {
+        _fileContext.DeleteAdult(Adult);
+        NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+
+    }
+    
+}
