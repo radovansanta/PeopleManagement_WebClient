@@ -6,18 +6,28 @@
 @inject FileContext _fileContext;
 
 
+<input placeholder="Enter your text"  value="@Value" @oninput="@OnInputChange"/>
+
+
+
 <div class="card-columns">
-@foreach (var adult in _fileContext.Adults)
-{
-    <AdultContainer adult=@adult/>
-}
+    @foreach (var adult in _fileContext.SearchAdult(Value))
+    {
+        <AdultContainer adult=@adult/>
+    }
 </div>
 
 
 
-
-
-
 @code{
- 
+    [Parameter]
+    public string Value { get; set; }
+
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+    private async Task OnInputChange(ChangeEventArgs args )
+    {
+        Value = (string)args.Value;
+        await ValueChanged.InvokeAsync(Value);
+    }
 }

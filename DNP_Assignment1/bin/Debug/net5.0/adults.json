@@ -13,5 +13,20 @@
     "Weight": 73,
     "Height": 180,
     "Sex": "M"
+  },
+  {
+    "JobTitle": {
+      "JobTitle": "Army",
+      "Salary": 5000
+    },
+    "Id": 302936,
+    "FirstName": "Matus",
+    "LastName": "Soltes",
+    "HairColor": "blond",
+    "EyeColor": "blue",
+    "Age": 20,
+    "Weight": 75,
+    "Height": 177,
+    "Sex": "M"
   }
 ]

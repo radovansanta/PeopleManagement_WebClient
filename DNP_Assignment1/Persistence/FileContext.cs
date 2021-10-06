@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using Models;
 
@@ -70,6 +71,17 @@ namespace DNP_Assignment1.Persistence
             Adults.Remove(adult);
             Console.Out.Write(adult);
             SaveChanges();
+        }
+
+        public IList<Adult> SearchAdult(string value)
+        {
+            if (value == null)
+            {
+                return Adults;
+
+            }
+            return Adults.Where(
+                adult => adult.FirstName.ToLower().Contains(value.ToLower())).ToList();
         }
     }
 }

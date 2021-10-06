@@ -117,6 +117,23 @@ using DNP_Assignment1.Persistence;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 22 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
+      
+    [Parameter]
+    public string Value { get; set; }
+
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+    private async Task OnInputChange(ChangeEventArgs args )
+    {
+        Value = (string)args.Value;
+        await ValueChanged.InvokeAsync(Value);
+    }
+
+#line default
+#line hidden
+#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext _fileContext { get; set; }
     }
 }
