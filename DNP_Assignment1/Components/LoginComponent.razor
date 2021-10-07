@@ -1,31 +1,46 @@
+@using Microsoft.AspNetCore.Components
 @using DNP_Assignment1.Authentication
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
 
 <AuthorizeView>
     <NotAuthorized>
-        <div class="form-group">
-            <label>User name:</label>
-            <input type="text" placeholder="user name" @bind-value="username"/>
+        <div style="margin: 10px;width: 45%" class="card">
+            <div class="card-body">
+                <h3>Login for more functions</h3>
+                <input class="form-control" placeholder="email@email.com" @bind-value="username"/>
+                <input style="margin-top: 10px" class="form-control" placeholder="password" @bind-value="password"/>
+                <div class="row" style="margin-left: 10px;">
+                    <div>
+                        <button style="margin-top: 10px;" type="button" class="btn btn-success" @onclick="PerformLogin">LogIn</button>
+                    </div>
+                    <div>
+                        <button style="margin-top: 10px;margin-left: 10px;" type="button" class="btn btn-primary" @onclick="PerformLogout">SignUp</button>
+                    </div>
+                </div>
+                <div>
+                    <p>@errorMessage</p>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" placeholder="password" @bind-value="password"/>
-        </div>
-        <div style="color:red">@errorMessage</div>
-
-        <a href="" @onclick="PerformLogin">
-            Login
-        </a>
     </NotAuthorized>
     <Authorized>
-        <a href="" @onclick="PerformLogout">
-            Log out
-        </a>
+        <div style="margin: 10px;width: 45%" class="card">
+                    <div class="card-body">
+                        <h3>Welcome</h3>
+                        <h5>You are now able to discover more functions</h5>
+                        <p>Under the section Add Adult you are able to create a new person. What's more you can check charts and see statistics</p>
+                        <div class="row" style="margin-left: 10px;">
+                            <div>
+                                <button style="margin-top: 10px;" type="button" class="btn btn-primary" @onclick="PerformLogout">LogOut</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </Authorized>
 </AuthorizeView>
 
-@code {
+    @code {
     private string username;
     private string password;
     private string errorMessage;

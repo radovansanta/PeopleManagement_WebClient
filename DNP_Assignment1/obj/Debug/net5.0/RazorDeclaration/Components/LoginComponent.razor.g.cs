@@ -11,7 +11,6 @@ namespace DNP_Assignment1.Components
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using Microsoft.AspNetCore.Components;
 #nullable restore
 #line 1 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/_Imports.razor"
 using System.Net.Http;
@@ -84,6 +83,13 @@ using DNP_Assignment1.Shared;
 #nullable disable
 #nullable restore
 #line 1 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/LoginComponent.razor"
+using Microsoft.AspNetCore.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/LoginComponent.razor"
 using DNP_Assignment1.Authentication;
 
 #line default
@@ -97,8 +103,8 @@ using DNP_Assignment1.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/LoginComponent.razor"
-       
+#line 43 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/LoginComponent.razor"
+           
     private string username;
     private string password;
     private string errorMessage;
