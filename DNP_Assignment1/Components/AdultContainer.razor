@@ -1,6 +1,8 @@
 @using Models
 @using DNP_Assignment1.Persistence
 @inject FileContext _fileContext;
+@attribute [Authorize (Policy = "SecurityLevel1")]
+
 <div style="margin: 10px" class="card">
         <div class="card-body">
             <h5 class="card-title">@Adult.FirstName @Adult.LastName</h5>

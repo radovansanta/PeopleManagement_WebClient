@@ -96,6 +96,13 @@ using DNP_Assignment1.Persistence;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultContainer.razor"
+           [Authorize (Policy = "SecurityLevel1")]
+
+#line default
+#line hidden
+#nullable disable
     public partial class AdultContainer : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -104,7 +111,7 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 61 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultContainer.razor"
+#line 63 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultContainer.razor"
        
     [Parameter]  
     public Adult Adult { get; set; }
