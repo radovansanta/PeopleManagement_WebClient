@@ -4,5 +4,11 @@
     "Password": "test",
     "FisrtName": "Radovan",
     "LastName": "Santa"
+  },
+  {
+    "Email": "r.novak@gmail.com",
+    "Password": "password",
+    "FisrtName": "Rene",
+    "LastName": "Novak"
   }
 ]

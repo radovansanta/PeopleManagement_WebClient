@@ -1,4 +1,7 @@
 @using Models
+@using DNP_Assignment1.Persistence
+@inject FileContext _fileContext;
+
 <div class="card">
     <div style="width: 800px" class="card-header">
         <h4>SignUp for free!</h4>
@@ -31,11 +34,17 @@
             <div>
                 <button type="submit" class="btn btn-success">SignUp</button>
             </div>
+            @error
         </EditForm>
     </div>
 </div>
 
 @code {
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+    
+    string error = "";
+    
     private User _user = new()
     {
         FisrtName = null,
@@ -46,6 +55,19 @@
 
     private void HandleRegistration()
     {
+        if (_user.FisrtName==null ||
+            _user.LastName==null ||
+            _user.Email==null ||
+            _user.Password==null)
+        {
+            error = "Missing inputs";
+        }
+        else
+        {
+            _fileContext.AddUser(_user);
+            NavigationManager.NavigateTo("/", forceLoad: false);
+        }
+        
         
     }
 

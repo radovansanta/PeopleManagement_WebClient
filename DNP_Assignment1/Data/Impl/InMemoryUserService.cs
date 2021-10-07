@@ -20,6 +20,8 @@ namespace DNP_Assignment1.Data.Impl
 
         public User ValidateUser(string email, string password)
         {
+            FileContext fileContext = new();
+            users = fileContext.Users.ToList();
             User user = users.FirstOrDefault(takenUser => takenUser.Email.Equals(email));
 
             if (user==null)

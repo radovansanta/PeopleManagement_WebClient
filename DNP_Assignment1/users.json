@@ -4,5 +4,17 @@
     "Password": "test",
     "FisrtName": "Radovan",
     "LastName": "Santa"
+  },
+  {
+    "Email": "r.novak@gmail.com",
+    "Password": "password",
+    "FisrtName": "Rene",
+    "LastName": "Novak"
+  },
+  {
+    "Email": "lh@gmail.com",
+    "Password": "ahoj",
+    "FisrtName": "Ludomil",
+    "LastName": "Horvosky"
   }
 ]
