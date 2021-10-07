@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="row">
                     <button @onclick="HandleDelete" style="margin-left: 30px; margin-right: 10px; margin-top: 10px" type="button" class="btn btn-danger btn-sm">Delete</button>
-                    <button style="margin-top: 10px" type="button" class="btn btn-warning btn-sm">Edit</button>
+                    <button style="margin-right: 10px; margin-top: 10px" class="btn btn-warning btn-sm"  @onclick="HandleEdit">Edit</button>
                 </div>
             </div>
         </div>
@@ -66,12 +66,16 @@
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 
-    
     private void HandleDelete()
     {
         _fileContext.DeleteAdult(Adult);
         NavigationManager.NavigateTo("/");
-
+    }
+    
+    private void HandleEdit()
+    {
+        string url = "/fetchdata/"+Adult.Id;
+        NavigationManager.NavigateTo(url);
     }
     
 }

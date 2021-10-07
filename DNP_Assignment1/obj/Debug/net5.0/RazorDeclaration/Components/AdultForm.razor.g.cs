@@ -110,13 +110,17 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 53 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
+#line 61 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
        
+
+    [Parameter]
+    public string id { get; set; }
+
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 
     string error = "";
-    
+
     private Adult _adult = new()
     {
         Id = 0,

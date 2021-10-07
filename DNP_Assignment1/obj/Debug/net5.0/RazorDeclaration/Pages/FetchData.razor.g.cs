@@ -83,13 +83,20 @@ using DNP_Assignment1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/FetchData.razor"
-using DNP_Assignment1.Data;
+#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/FetchData.razor"
+using DNP_Assignment1.Components;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
+#nullable restore
+#line 3 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/FetchData.razor"
+using Models;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata/{Id:int}")]
     public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -98,20 +105,30 @@ using DNP_Assignment1.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/FetchData.razor"
+#line 7 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/FetchData.razor"
        
-    private WeatherForecast[] forecasts;
-
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-    }
-
+    [Parameter]
+    public int Id { get; set; }
+    [Parameter]
+    public string FirstName { get; set; }
+    [Parameter]
+    public string LastName { get; set; }
+    [Parameter]
+    public string HairColor { get; set; }
+    [Parameter]
+    public string EyeColor { get; set; }
+    [Parameter]
+    public int Age { get; set; }
+    [Parameter]
+    public float Weight { get; set; }
+    [Parameter]
+    public int Height { get; set; }
+    [Parameter]
+    public string Sex { get; set; }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
     }
 }
 #pragma warning restore 1591

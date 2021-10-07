@@ -1,49 +1,26 @@
-﻿@page "/fetchdata"
+﻿@page "/fetchdata/{Id:int}"
+@using DNP_Assignment1.Components
+@using Models
 
-@using DNP_Assignment1.Data
-@inject WeatherForecastService ForecastService
-
-<h1>Weather forecast</h1>
-
-<p>This component demonstrates fetching data from a service.</p>
-
-@if (forecasts == null)
-{
-    <p>
-        <em>Loading...</em>
-    </p>
-}
-else
-{
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var forecast in forecasts)
-        {
-            <tr>
-                <td>@forecast.Date.ToShortDateString()</td>
-                <td>@forecast.TemperatureC</td>
-                <td>@forecast.TemperatureF</td>
-                <td>@forecast.Summary</td>
-            </tr>
-        }
-        </tbody>
-    </table>
-}
+<AdultForm id=@Id.ToString()></AdultForm>
 
 @code {
-    private WeatherForecast[] forecasts;
-
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-    }
-
+    [Parameter]
+    public int Id { get; set; }
+    [Parameter]
+    public string FirstName { get; set; }
+    [Parameter]
+    public string LastName { get; set; }
+    [Parameter]
+    public string HairColor { get; set; }
+    [Parameter]
+    public string EyeColor { get; set; }
+    [Parameter]
+    public int Age { get; set; }
+    [Parameter]
+    public float Weight { get; set; }
+    [Parameter]
+    public int Height { get; set; }
+    [Parameter]
+    public string Sex { get; set; }
 }
