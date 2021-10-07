@@ -73,15 +73,24 @@ namespace DNP_Assignment1.Persistence
             SaveChanges();
         }
 
-        public IList<Adult> SearchAdult(string value)
+        public IList<Adult> SearchAdult(string[] value)
         {
-            if (value == null)
+            if(value[0] == "firstName")
             {
-                return Adults;
-
+                return Adults.Where(
+                    adult => adult.FirstName.ToLower().Contains(value[1].ToLower())).ToList();
             }
-            return Adults.Where(
-                adult => adult.FirstName.ToLower().Contains(value.ToLower())).ToList();
+            if(value[0] == "lastName")
+            {
+                return Adults.Where(
+                    adult => adult.LastName.ToLower().Contains(value[1].ToLower())).ToList();
+            }
+            if(value[0] == "id")
+            {
+                return Adults.Where(
+                    adult => adult.Id.ToString().Contains(value[1])).ToList();
+            }
+            return Adults;
         }
     }
 }

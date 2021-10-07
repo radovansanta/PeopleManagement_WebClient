@@ -121,14 +121,37 @@ using DNP_Assignment1.Persistence;
 #line 36 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
       
     [Parameter]
-    public string Value { get; set; }
+    public string ValueFirstName { get; set; }
+    [Parameter]
+    public string ValueLastName { get; set; }
+    [Parameter]
+    public string ValueId { get; set; }
 
     [Parameter]
     public EventCallback<string> ValueChanged { get; set; }
-    private async Task OnInputChange(ChangeEventArgs args )
+    
+    string[] searchOption = {"",""};
+    
+    private async Task OnInputChangeFisrtName(ChangeEventArgs args )
     {
-        Value = (string)args.Value;
-        await ValueChanged.InvokeAsync(Value);
+        ValueFirstName = (string)args.Value;
+        searchOption[0] = "firstName";
+        searchOption[1] = ValueFirstName;
+        await ValueChanged.InvokeAsync(ValueFirstName);
+    }
+    private async Task OnInputChangeLastName(ChangeEventArgs args )
+    {
+        ValueLastName = (string)args.Value;
+        searchOption[0] = "lastName";
+        searchOption[1] = ValueLastName;
+        await ValueChanged.InvokeAsync(ValueLastName);
+    }
+    private async Task OnInputChangeId(ChangeEventArgs args )
+    {
+        ValueId = (string)args.Value;
+        searchOption[0] = "id";
+        searchOption[1] = ValueId;
+        await ValueChanged.InvokeAsync(ValueId);
     }
 
 #line default
