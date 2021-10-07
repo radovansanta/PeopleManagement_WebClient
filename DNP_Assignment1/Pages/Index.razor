@@ -5,22 +5,26 @@
 @using DNP_Assignment1.Persistence
 @inject FileContext _fileContext;
 
+
+
+<Search></Search>
+
 <div class="content px-4">
-<h1>All Adults</h1>
-<h5><span style="color: white" class="badge bg-secondary">Search by:</span></h5>
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <input class="form-control" placeholder="First name"  value="@ValueFirstName" @oninput="@OnInputChangeFisrtName"/>
+    <h1>All Adults</h1>
+    <h5><span style="color: white" class="badge bg-secondary">Search by:</span></h5>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <input class="form-control" placeholder="First name"  value="@ValueFirstName" @oninput="OnInputChangeFisrtName"/>
+            </div>
+            <div class="col-sm">
+                <input class="form-control" placeholder="Last name"  value="@ValueLastName" @oninput="OnInputChangeLastName"/>
+            </div>
+            <div class="col-sm">
+                <input class="form-control" placeholder="ID"  value="@ValueId" @oninput="OnInputChangeId"/>
+            </div>
+        </div>
     </div>
-    <div class="col-sm">
-      <input class="form-control" placeholder="Last name"  value="@ValueLastName" @oninput="@OnInputChangeLastName"/>
-    </div>
-    <div class="col-sm">
-      <input class="form-control" placeholder="ID"  value="@ValueId" @oninput="@OnInputChangeId"/>
-    </div>
-  </div>
-</div>
 
 
 <div class="card-columns">
@@ -34,11 +38,10 @@
 
 
 @code{
-    [Parameter]
     public string ValueFirstName { get; set; }
-    [Parameter]
+
     public string ValueLastName { get; set; }
-    [Parameter]
+
     public string ValueId { get; set; }
 
     [Parameter]

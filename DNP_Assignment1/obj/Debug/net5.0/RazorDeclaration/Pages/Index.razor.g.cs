@@ -118,13 +118,12 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 36 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
+#line 40 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Index.razor"
       
-    [Parameter]
     public string ValueFirstName { get; set; }
-    [Parameter]
+
     public string ValueLastName { get; set; }
-    [Parameter]
+
     public string ValueId { get; set; }
 
     [Parameter]
