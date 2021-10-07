@@ -5,45 +5,75 @@
 
 <div class="card">
     <div style="width: 800px" class="card-header">
-        Edit an adult
+        <h4>Edit an adult</h4>
     </div>
     <div class="card-body">
         <EditForm Model="@_adult" OnValidSubmit="@HandleValidSubmit">
+            <h5>Personal information</h5>
             <div class="form-group">
+                <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ID.png" alt="...">
                 <label for="idInput">ID</label>
-                <InputNumber disabled class="form-control" id="idInput" @bind-Value="_adult.Id" /></div>
-            <div class="form-group">
-                <label for="firstNameInput">First Name</label>
-                <InputText placeholder="Enter first name" class="form-control" id="firstNameInput" @bind-Value="_adult.FirstName" /></div>
-            <div class="form-group">
-                <label for="lastNameInput">Last Name</label>
-                <InputText placeholder="Enter last name" class="form-control" id="lastNameInput" @bind-Value="_adult.LastName" /></div>
-            <div class="form-group">
-                <label for="hairColorInput">Hair Color</label>
-                <InputText placeholder="Enter color of hair" class="form-control" id="hairColorInput" @bind-Value="_adult.HairColor"/></div>
-            <div class="form-group">
-                <label for="eyeColorInput">Eye Color</label>
-                <InputText placeholder="Enter color of eye" class="form-control" id="eyeColorInput" @bind-Value="_adult.EyeColor"/></div>
-            <div class="form-group">
-                <label for="ageInput">Age</label>
-                <InputNumber class="form-control" id="ageInput" @bind-Value="_adult.Age"/></div>
-            <div class="form-group">
-                <label for="weightInput">Weight</label>
-                <InputNumber class="form-control" id="weightInput" @bind-Value="_adult.Weight"/></div>
-            <div class="form-group">
-                <label for="heightInput">Height</label>
-                <InputNumber class="form-control" id="heightInput" @bind-Value="_adult.Height"/></div>
-            <div class="form-group">
-                <label for="sexInput">Sex</label>
-                <InputText placeholder="Enter your sex" class="form-control" id="sexInput" @bind-Value="_adult.Sex"/></div>
-            <div class="form-group">
-                <label for="salaryInput">Salary</label>
-                <InputNumber class="form-control" id="salaryInput" @bind-Value="_adult.JobTitle.Salary"/></div>
-            <div class="form-group">
-                <label for="jobTitleInput">Job Title</label>
-                <InputText placeholder="Enter title of your job" class="form-control" id="jobTitleInput" @bind-Value="_adult.JobTitle.JobTitle"/></div>
+                <InputNumber disabled class="form-control" id="idInput" @bind-Value="_adult.Id"/></div>
+            <div class="row" style="margin-left: 3px;">
+                <div class="form-group">
+                    <label for="firstNameInput">First Name</label>
+                    <InputText placeholder="Enter first name" class="form-control" id="firstNameInput" @bind-Value="_adult.FirstName"/>
+                </div>
+                <div class="form-group" style="margin-left: 20px">
+                    <label for="lastNameInput">Last Name</label>
+                    <InputText placeholder="Enter last name" class="form-control" id="lastNameInput" @bind-Value="_adult.LastName"/>
+                </div>
+            </div>
+            <h5>Other infromation</h5>
+            <div class="row" style="margin-left: 3px;">
+                <div class="form-group">
+                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Hair.png" alt="...">
+                    <label for="hairColorInput">Hair Color</label>
+                    <InputText placeholder="Enter color of hair" class="form-control" id="hairColorInput" @bind-Value="_adult.HairColor"/>
+                </div>
+                <div class="form-group" style="margin-left: 20px">
+                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Eye.png" alt="...">
+                    <label for="eyeColorInput">Eye Color</label>
+                    <InputText placeholder="Enter color of eye" class="form-control" id="eyeColorInput" @bind-Value="_adult.EyeColor"/>
+                </div>
+                <div class="form-group" style="margin-left: 20px">
+                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Sex.png" alt="...">
+                    <label for="sexInput">Sex</label>
+                    <InputText placeholder="Enter your sex" class="form-control" id="sexInput" @bind-Value="_adult.Sex"/>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 3px;">
+                <div class="form-group">
+                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Age.png" alt="...">
+                    <label for="ageInput">Age</label>
+                    <InputNumber class="form-control" id="ageInput" @bind-Value="_adult.Age"/>
+                </div>
+                <div class="form-group" style="margin-left: 20px">
+                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Weight.png" alt="...">
+                    <label for="weightInput">Weight</label>
+                    <InputNumber class="form-control" id="weightInput" @bind-Value="_adult.Weight"/>
+                </div>
+                <div class="form-group" style="margin-left: 20px">
+                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Height.png" alt="...">
+                    <label for="heightInput">Height</label>
+                    <InputNumber class="form-control" id="heightInput" @bind-Value="_adult.Height"/>
+                </div>
+            </div>
+            <h5>Job infromation</h5>
+            <div class="row" style="margin-left: 3px;">
+                <div class="form-group">
+                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Income.png" alt="...">
+                    <label for="salaryInput">Salary</label>
+                    <InputNumber class="form-control" id="salaryInput" @bind-Value="_adult.JobTitle.Salary"/>
+                </div>
+                <div class="form-group" style="margin-left: 20px">
+                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Job.png" alt="...">
+                    <label for="jobTitleInput">Job Title</label>
+                    <InputText placeholder="Enter title of your job" class="form-control" id="jobTitleInput" @bind-Value="_adult.JobTitle.JobTitle"/>
+                </div>
+            </div>
             <div>
-                <button type="submit" class="btn btn-primary">Edit Adult</button>
+                <button type="submit" class="btn btn-success">Edit Adult</button>
             </div>
             <p>@error</p>
         </EditForm>
