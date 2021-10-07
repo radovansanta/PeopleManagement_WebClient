@@ -17,9 +17,6 @@
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/DNP_Assignment1.MvcApplicationPartsAssemblyInfo.cache
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/DNP_Assignment1.RazorComponent.input.cache
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs
-/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Pages/Counter.razor.g.cs
-/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs
-/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs
@@ -30,9 +27,6 @@
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/DNP_Assignment1.TagHelpers.output.cache
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/DNP_Assignment1.RazorCoreGenerate.cache
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/App.razor.g.cs
-/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Pages/Counter.razor.g.cs
-/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Pages/FetchData.razor.g.cs
-/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Shared/SurveyPrompt.razor.g.cs
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/_Imports.razor.g.cs
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Shared/MainLayout.razor.g.cs
@@ -68,3 +62,9 @@
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/bin/Debug/net5.0/users.json
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Components/EditAdultForm.razor.g.cs
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Components/EditAdultForm.razor.g.cs
+/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Pages/AddAdultPage.razor.g.cs
+/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Pages/AdultsPage.razor.g.cs
+/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Pages/EditAdultPage.razor.g.cs
+/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Pages/AddAdultPage.razor.g.cs
+/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Pages/AdultsPage.razor.g.cs
+/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Pages/EditAdultPage.razor.g.cs

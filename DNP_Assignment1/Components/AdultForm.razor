@@ -13,7 +13,7 @@
             <div class="form-group">
                 <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ID.png" alt="...">
                 <label for="idInput">ID</label>
-                <InputNumber disabled class="form-control" id="idInput" @bind-Value="_adult.Id"/></div>
+                <InputNumber class="form-control" id="idInput" @bind-Value="_adult.Id"/></div>
             <div class="row" style="margin-left: 3px;">
                 <div class="form-group">
                     <label for="firstNameInput">First Name</label>
@@ -123,7 +123,7 @@
         else
         {
             _fileContext.AddAdult(_adult);
-            NavigationManager.NavigateTo("add_people", forceLoad: false);
+            NavigationManager.NavigateTo("adults", forceLoad: false);
         }
     }
 }

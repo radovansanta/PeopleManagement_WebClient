@@ -28,5 +28,20 @@
     "Weight": 75,
     "Height": 175,
     "Sex": "M"
+  },
+  {
+    "JobTitle": {
+      "JobTitle": "student",
+      "Salary": 17000
+    },
+    "Id": 293347,
+    "FirstName": "Ludomil",
+    "LastName": "Horovsky",
+    "HairColor": "blond",
+    "EyeColor": "blue",
+    "Age": 21,
+    "Weight": 74,
+    "Height": 175,
+    "Sex": "M"
   }
 ]

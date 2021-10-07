@@ -8,7 +8,6 @@ namespace DNP_Assignment1.Pages
 {
     #line hidden
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
@@ -83,20 +82,87 @@ using DNP_Assignment1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/Counter.razor"
+#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/AdultsPage.razor"
+using Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/AdultsPage.razor"
+using System.Collections.Generic;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/AdultsPage.razor"
 using DNP_Assignment1.Components;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
-    public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 5 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/AdultsPage.razor"
+using DNP_Assignment1.Persistence;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/adults")]
+    public partial class AdultsPage : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 38 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/AdultsPage.razor"
+      
+    public string ValueFirstName { get; set; }
+
+    public string ValueLastName { get; set; }
+
+    public string ValueId { get; set; }
+
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+    
+    string[] searchOption = {"",""};
+    
+    private async Task OnInputChangeFisrtName(ChangeEventArgs args )
+    {
+        ValueFirstName = (string)args.Value;
+        searchOption[0] = "firstName";
+        searchOption[1] = ValueFirstName;
+        await ValueChanged.InvokeAsync(ValueFirstName);
+    }
+    private async Task OnInputChangeLastName(ChangeEventArgs args )
+    {
+        ValueLastName = (string)args.Value;
+        searchOption[0] = "lastName";
+        searchOption[1] = ValueLastName;
+        await ValueChanged.InvokeAsync(ValueLastName);
+    }
+    private async Task OnInputChangeId(ChangeEventArgs args )
+    {
+        ValueId = (string)args.Value;
+        searchOption[0] = "id";
+        searchOption[1] = ValueId;
+        await ValueChanged.InvokeAsync(ValueId);
+    }
+    
+    private void Reload()
+    {
+        searchOption[0] = "";
+        searchOption[1] = "";
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext _fileContext { get; set; }
     }
 }
 #pragma warning restore 1591

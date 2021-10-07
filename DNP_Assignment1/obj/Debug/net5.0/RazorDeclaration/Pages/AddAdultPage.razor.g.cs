@@ -83,36 +83,20 @@ using DNP_Assignment1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/FetchData.razor"
+#line 2 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/AddAdultPage.razor"
 using DNP_Assignment1.Components;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/FetchData.razor"
-using Models;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata/{Id:int}")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/addadult")]
+    public partial class AddAdultPage : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 7 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Pages/FetchData.razor"
-       
-    [Parameter]
-    public int Id { get; set; }
-
-#line default
-#line hidden
-#nullable disable
     }
 }
 #pragma warning restore 1591

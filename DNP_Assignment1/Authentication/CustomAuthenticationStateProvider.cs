@@ -69,7 +69,6 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider {
         claims.Add(new Claim(ClaimTypes.Name, user.Email));
         claims.Add(new Claim("FistName", user.FisrtName));
         claims.Add(new Claim("LastName", user.LastName));
-        claims.Add(new Claim("Level", user.SecurityLever.ToString()));
 
         ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth_type");
         return identity;

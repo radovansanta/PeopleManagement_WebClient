@@ -120,7 +120,7 @@ using DNP_Assignment1.Persistence;
     
     private void HandleEdit()
     {
-        string url = "/fetchdata/"+Adult.Id;
+        string url = "/editadult/"+Adult.Id;
         NavigationManager.NavigateTo(url);
     }
     
