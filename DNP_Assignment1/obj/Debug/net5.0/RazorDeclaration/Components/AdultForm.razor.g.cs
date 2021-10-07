@@ -153,7 +153,7 @@ using DNP_Assignment1.Persistence;
         else
         {
             _fileContext.AddAdult(_adult);
-            NavigationManager.NavigateTo("/", forceLoad: true);
+            NavigationManager.NavigateTo("add_people", forceLoad: false);
         }
         
         

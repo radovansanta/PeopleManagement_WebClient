@@ -112,10 +112,11 @@ using DNP_Assignment1.Persistence;
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 
+    
     private void HandleDelete()
     {
         _fileContext.DeleteAdult(Adult);
-        NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+        NavigationManager.NavigateTo("/");
 
     }
     

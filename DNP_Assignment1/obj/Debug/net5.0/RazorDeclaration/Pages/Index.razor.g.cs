@@ -152,6 +152,12 @@ using DNP_Assignment1.Persistence;
         searchOption[1] = ValueId;
         await ValueChanged.InvokeAsync(ValueId);
     }
+    
+    private void Reload()
+    {
+        searchOption[0] = "";
+        searchOption[1] = "";
+    }
 
 #line default
 #line hidden

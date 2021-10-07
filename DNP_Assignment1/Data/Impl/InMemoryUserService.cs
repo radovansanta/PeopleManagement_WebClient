@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DNP_Assignment1.Persistence;
 using Models;
 
 namespace DNP_Assignment1.Data.Impl
@@ -12,27 +13,9 @@ namespace DNP_Assignment1.Data.Impl
 
         public InMemoryUserService()
         {
-            users = new[]
-            {
-                new User()
-                {
-                    FisrtName = "Radovan",
-                    LastName = "Santa",
-                    Email = "santa.radovan@gmail.com",
-                    SecurityLever = 1,
-                    Password = "test"
-                },
-                new User()
-                {
-                    FisrtName = "Radovan",
-                    LastName = "Santa",
-                    Email = "santa.radovan@gmail.com",
-                    SecurityLever = 1,
-                    Password = "test"
-                }
-            }.ToList();
-
-
+            FileContext fileContext = new();
+            users = fileContext.Users.ToList();
+            Console.Out.WriteLine(users[0].Email);
         }
 
         public User ValidateUser(string email, string password)

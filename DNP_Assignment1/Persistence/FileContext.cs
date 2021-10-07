@@ -11,24 +11,22 @@ namespace DNP_Assignment1.Persistence
     {
         public IList<Family> Families { get; private set; }
         public IList<Adult> Adults { get; private set; }
+        public IList<User> Users { get; set; }
 
         private readonly string familiesFile = "families.json";
         private readonly string adultsFile = "adults.json";
+        private readonly string usersFile = "users.json";
 
         public FileContext()
         {
-            if (File.Exists(familiesFile))
-            {
-                Console.Out.WriteLine("Existuje");
-                Console.Out.WriteLine(adultsFile);
-            }
             Families = File.Exists(familiesFile) ? ReadData<Family>(familiesFile) : new List<Family>();
             Adults = File.Exists(adultsFile) ? ReadData<Adult>(adultsFile) : new List<Adult>();
+            Users = File.Exists(usersFile) ? ReadData<User>(usersFile) : new List<User>();
         }
 
         private IList<T> ReadData<T>(string s)
         {
-            using (var jsonReader = File.OpenText(adultsFile))
+            using (var jsonReader = File.OpenText(s))
             {
                 return JsonSerializer.Deserialize<List<T>>(jsonReader.ReadToEnd());
             }
@@ -57,12 +55,28 @@ namespace DNP_Assignment1.Persistence
                 outputFile.Write(jsonAdults);
                 Console.Out.WriteLine(jsonAdults);
             }
+            
+            // storing users
+            string jsonUsers = JsonSerializer.Serialize(Users, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+            using (StreamWriter outputFile = new StreamWriter(usersFile, false))
+            {
+                outputFile.Write(jsonUsers);
+                Console.Out.WriteLine(jsonUsers);
+            }
         }
 
         public void AddAdult(Adult adult)
         {
-            Console.Out.WriteLine(ReadData <Adult>("s"));
             Adults.Add(adult);
+            SaveChanges();
+        }
+        
+        public void AddUser(User user)
+        {
+            Users.Add(user);
             SaveChanges();
         }
 

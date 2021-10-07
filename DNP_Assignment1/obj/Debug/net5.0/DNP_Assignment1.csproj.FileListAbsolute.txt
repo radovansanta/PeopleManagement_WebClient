@@ -65,3 +65,4 @@
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Pages/Home.razor.g.cs
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/RazorDeclaration/Components/LoginComponent.razor.g.cs
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Components/LoginComponent.razor.g.cs
+/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/bin/Debug/net5.0/users.json
