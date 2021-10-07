@@ -6,6 +6,5 @@ namespace Models
         public string Password { get; set; }
         public string FisrtName { get; set; }
         public string LastName { get; set; }
-        //public int SecurityLever { get; set; }
     }
 }
