@@ -87,6 +87,16 @@ namespace DNP_Assignment1.Persistence
             SaveChanges();
         }
 
+        public void EditAdult(Adult adult)
+        {
+            string[] searchOption = {"id", adult.Id.ToString()};
+            Adult selectedAdult = SearchAdult(searchOption)[0];
+            DeleteAdult(selectedAdult);
+            AddAdult(adult);
+            SaveChanges();
+
+        }
+
         public IList<Adult> SearchAdult(string[] value)
         {
             if(value[0] == "firstName")

@@ -110,12 +110,8 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 61 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
+#line 53 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
        
-
-    [Parameter]
-    public string id { get; set; }
-
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 
@@ -159,9 +155,6 @@ using DNP_Assignment1.Persistence;
             _fileContext.AddAdult(_adult);
             NavigationManager.NavigateTo("add_people", forceLoad: false);
         }
-        
-        
-        
     }
 
 #line default

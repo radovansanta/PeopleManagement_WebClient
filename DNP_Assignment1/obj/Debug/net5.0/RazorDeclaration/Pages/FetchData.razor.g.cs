@@ -109,22 +109,6 @@ using Models;
        
     [Parameter]
     public int Id { get; set; }
-    [Parameter]
-    public string FirstName { get; set; }
-    [Parameter]
-    public string LastName { get; set; }
-    [Parameter]
-    public string HairColor { get; set; }
-    [Parameter]
-    public string EyeColor { get; set; }
-    [Parameter]
-    public int Age { get; set; }
-    [Parameter]
-    public float Weight { get; set; }
-    [Parameter]
-    public int Height { get; set; }
-    [Parameter]
-    public string Sex { get; set; }
 
 #line default
 #line hidden

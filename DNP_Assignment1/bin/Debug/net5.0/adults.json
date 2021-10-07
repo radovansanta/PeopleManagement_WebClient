@@ -13,5 +13,20 @@
     "Weight": 75,
     "Height": 175,
     "Sex": "M"
+  },
+  {
+    "JobTitle": {
+      "JobTitle": "Pornoherec",
+      "Salary": 1
+    },
+    "Id": 45678,
+    "FirstName": "Kokot",
+    "LastName": "Picusovsky",
+    "HairColor": "dajake",
+    "EyeColor": "ciganske",
+    "Age": 300,
+    "Weight": 1000,
+    "Height": 4,
+    "Sex": "Neurcene"
   }
 ]
