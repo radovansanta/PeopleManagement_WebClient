@@ -28,20 +28,5 @@
     "Weight": 74,
     "Height": 175,
     "Sex": "M"
-  },
-  {
-    "JobTitle": {
-      "JobTitle": "student",
-      "Salary": 15000
-    },
-    "Id": 293348,
-    "FirstName": "Rene",
-    "LastName": "Novak",
-    "HairColor": "blond",
-    "EyeColor": "green",
-    "Age": 22,
-    "Weight": 80,
-    "Height": 180,
-    "Sex": "M"
   }
 ]
