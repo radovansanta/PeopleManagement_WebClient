@@ -104,7 +104,7 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 42 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/RegisterComponent.razor"
+#line 46 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/RegisterComponent.razor"
        
     [Inject]
     public NavigationManager NavigationManager { get; set; }
