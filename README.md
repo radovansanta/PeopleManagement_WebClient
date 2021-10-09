@@ -8,4 +8,4 @@ Welcome to the people management system. The system was created as a school assi
 # Check the video
 https://www.youtube.com/embed/VoNAQszEHHM
 
-[![IMAGE ALT TEXT HERE](https://www.youtube.com/embed/VoNAQszEHHM.jpg)](https://www.youtube.com/embed/VoNAQszEHHM)
+[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=VoNAQszEHHM.jpg)](https://www.youtube.com/watch?v=VoNAQszEHHM)
