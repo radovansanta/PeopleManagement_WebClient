@@ -172,7 +172,7 @@ using DNP_Assignment1.Persistence;
             }
             
             _fileContext.EditAdult(_adult);
-            NavigationManager.NavigateTo("add_people", forceLoad: false);
+            NavigationManager.NavigateTo("/adults", forceLoad: false);
         }
     }
 
