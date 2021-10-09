@@ -17,22 +17,6 @@
   },
   {
     "JobTitle": {
-      "JobTitle": "Mascot",
-      "Salary": 13000
-    },
-    "Id": 293342,
-    "FirstName": "Yasmine",
-    "LastName": "Baxter",
-    "HairColor": "Black",
-    "EyeColor": "Brown",
-    "Age": 58,
-    "Weight": 39,
-    "Height": 174,
-    "Sex": "F",
-    "ProfileUrl": "https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileFemale.png"
-  },
-  {
-    "JobTitle": {
       "JobTitle": "Student",
       "Salary": 17000
     },

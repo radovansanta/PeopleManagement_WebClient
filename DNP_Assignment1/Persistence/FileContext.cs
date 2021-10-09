@@ -116,5 +116,18 @@ namespace DNP_Assignment1.Persistence
             }
             return Adults;
         }
+
+        public Boolean IsIdUnique(int id)
+        {
+            for (int i = 0; i < Adults.Count; i++)
+            {
+                if (Adults[i].Id == id)
+                {
+                    return false;
+                }
+                
+            }
+            return true;
+        }
     }
 }
