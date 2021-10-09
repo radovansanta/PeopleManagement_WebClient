@@ -110,7 +110,7 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 97 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
+#line 98 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
        
     [Inject]
     public NavigationManager NavigationManager { get; set; }
@@ -118,11 +118,13 @@ using DNP_Assignment1.Persistence;
 
     string error = "";
     
-    string one = "one";
-    string two = "two";
-    string three = "three";
+    string _profileDefault = "profileDefault";
+    string _profileMale = "profileMale";
+    string _profileFemale = "profileFemale";
+    string _profileUrl = "ownUrl";
 
-    private string test { get; set; } = "one";
+    private string ProfilePicture { get; set; } = "profileDefault";
+    string _ownUrl = "";
 
 
     private Adult _adult = new()
@@ -161,6 +163,27 @@ using DNP_Assignment1.Persistence;
         }
         else
         {
+            if (ProfilePicture.Equals("profileDefault"))
+            {
+                _adult.ProfileUrl = "https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileDefault.png";
+            }
+            else if (ProfilePicture.Equals("profileMale"))
+            {
+                _adult.ProfileUrl = "https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileMale.png";
+            }
+            else if (ProfilePicture.Equals("profileFemale"))
+            {
+                _adult.ProfileUrl = "https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileFemale.png";
+            }
+            else if (ProfilePicture.Equals("ownUrl"))
+            {
+                if (_ownUrl == "")
+                {
+                    _adult.ProfileUrl = "https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileDefault.png";
+                } else _adult.ProfileUrl = _ownUrl;
+               
+            }
+            
             _fileContext.AddAdult(_adult);
             NavigationManager.NavigateTo("adults", forceLoad: false);
         }

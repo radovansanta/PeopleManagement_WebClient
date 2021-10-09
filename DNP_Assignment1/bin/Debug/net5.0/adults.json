@@ -12,7 +12,8 @@
     "Age": 21,
     "Weight": 75,
     "Height": 175,
-    "Sex": "M"
+    "Sex": "M",
+    "ProfileUrl": "https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileDefault.png"
   },
   {
     "JobTitle": {
@@ -27,6 +28,7 @@
     "Age": 21,
     "Weight": 74,
     "Height": 175,
-    "Sex": "M"
+    "Sex": "M",
+    "ProfileUrl": "https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileDefault.png"
   }
 ]
