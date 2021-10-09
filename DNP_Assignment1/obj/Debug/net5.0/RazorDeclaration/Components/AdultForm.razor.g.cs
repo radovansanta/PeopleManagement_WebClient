@@ -110,12 +110,20 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 85 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
+#line 97 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultForm.razor"
        
     [Inject]
     public NavigationManager NavigationManager { get; set; }
+    
 
     string error = "";
+    
+    string one = "one";
+    string two = "two";
+    string three = "three";
+
+    private string test { get; set; } = "one";
+
 
     private Adult _adult = new()
     {

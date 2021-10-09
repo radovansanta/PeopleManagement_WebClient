@@ -104,7 +104,7 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 62 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultContainer.razor"
+#line 65 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/AdultContainer.razor"
        
     [Parameter]  
     public Adult Adult { get; set; }
