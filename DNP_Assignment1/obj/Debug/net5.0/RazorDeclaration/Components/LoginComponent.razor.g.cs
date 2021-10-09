@@ -103,7 +103,7 @@ using DNP_Assignment1.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/LoginComponent.razor"
+#line 44 "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/Components/LoginComponent.razor"
            
     private string username;
     private string password;
