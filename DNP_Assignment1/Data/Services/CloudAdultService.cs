@@ -67,5 +67,18 @@ namespace DNP_Assignment1.Data.Services
             }
         }
         
+
+        public async Task<Adult> GetAdultAsync(int id)
+        {
+            HttpResponseMessage reponse = await client.GetAsync(uri + "/Adult/"+id);
+            if (!reponse.IsSuccessStatusCode)
+            {
+                throw new Exception("Error or whatever");
+            }
+
+            string message = await reponse.Content.ReadAsStringAsync();
+            Adult result = JsonSerializer.Deserialize<Adult>(message);
+            return result;
+        }
     }
 }

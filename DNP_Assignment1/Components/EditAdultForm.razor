@@ -1,114 +1,120 @@
 @using Microsoft.AspNetCore.Components
 @using Models
 @using DNP_Assignment1.Persistence
-@inject FileContext _fileContext;
+@using DNP_Assignment1.Data.Services
+@inject IAdultService _adultService;
 
 <div class="card">
     <div style="width: 800px" class="card-header">
-        <h4>Edit an adult</h4>
+        <h4>Edit an adult @id</h4>
     </div>
-    <div class="card-body">
-        <EditForm Model="@_adult" OnValidSubmit="@HandleValidSubmit">
-            <h5>Personal information</h5>
-            <div class="form-group">
-                <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ID.png" alt="...">
-                <label for="idInput">ID</label>
-                <InputNumber disabled class="form-control" id="idInput" @bind-Value="_adult.Id"/></div>
-            <div class="row" style="margin-left: 3px;">
-                <div class="form-group">
-                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/FirstName.png" alt="...">
-                    <label for="firstNameInput">First Name</label>
-                    <InputText placeholder="Enter first name" class="form-control" id="firstNameInput" @bind-Value="_adult.FirstName"/>
-                </div>
-                <div class="form-group" style="margin-left: 20px">
-                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/LastName.png" alt="...">
-                    <label for="lastNameInput">Last Name</label>
-                    <InputText placeholder="Enter last name" class="form-control" id="lastNameInput" @bind-Value="_adult.LastName"/>
-                </div>
+    @if (_adult == null)
+        {
+            <p>
+                <em>Loading...</em>
+            </p>
+        }
+
+        @if (_adult != null)
+        {
+
+            <div class="card-body">
+                <EditForm Model="@_adult" OnValidSubmit="@HandleValidSubmit">
+                    <h5>Personal information</h5>
+                    <div class="form-group">
+                        <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ID.png" alt="...">
+                        <label for="idInput">ID</label>
+                        <InputNumber disabled class="form-control" id="idInput" @bind-Value="_adult.Id"/></div>
+                    <div class="row" style="margin-left: 3px;">
+                        <div class="form-group">
+                            <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/FirstName.png" alt="...">
+                            <label for="firstNameInput">First Name</label>
+                            <InputText placeholder="Enter first name" class="form-control" id="firstNameInput" @bind-Value="_adult.FirstName"/>
+                        </div>
+                        <div class="form-group" style="margin-left: 20px">
+                            <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/LastName.png" alt="...">
+                            <label for="lastNameInput">Last Name</label>
+                            <InputText placeholder="Enter last name" class="form-control" id="lastNameInput" @bind-Value="_adult.LastName"/>
+                        </div>
+                    </div>
+                    <h5>Other infromation</h5>
+                    <div class="row" style="margin-left: 3px;">
+                        <div class="form-group">
+                            <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Hair.png" alt="...">
+                            <label for="hairColorInput">Hair Color</label>
+                            <InputText placeholder="Enter color of hair" class="form-control" id="hairColorInput" @bind-Value="_adult.HairColor"/>
+                        </div>
+                        <div class="form-group" style="margin-left: 20px">
+                            <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Eye.png" alt="...">
+                            <label for="eyeColorInput">Eye Color</label>
+                            <InputText placeholder="Enter color of eye" class="form-control" id="eyeColorInput" @bind-Value="_adult.EyeColor"/>
+                        </div>
+                        <div class="form-group" style="margin-left: 20px">
+                            <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Sex.png" alt="...">
+                            <label for="sexInput">Sex</label>
+                            <InputText placeholder="Enter your sex" class="form-control" id="sexInput" @bind-Value="_adult.Sex"/>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: 3px;">
+                        <div class="form-group">
+                            <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Age.png" alt="...">
+                            <label for="ageInput">Age</label>
+                            <InputNumber class="form-control" id="ageInput" @bind-Value="_adult.Age"/>
+                        </div>
+                        <div class="form-group" style="margin-left: 20px">
+                            <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Weight.png" alt="...">
+                            <label for="weightInput">Weight</label>
+                            <InputNumber class="form-control" id="weightInput" @bind-Value="_adult.Weight"/>
+                        </div>
+                        <div class="form-group" style="margin-left: 20px">
+                            <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Height.png" alt="...">
+                            <label for="heightInput">Height</label>
+                            <InputNumber class="form-control" id="heightInput" @bind-Value="_adult.Height"/>
+                        </div>
+                    </div>
+                    <h5>Job infromation</h5>
+                    <div class="row" style="margin-left: 3px;">
+                        <div class="form-group">
+                            <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Income.png" alt="...">
+                            <label for="salaryInput">Salary</label>
+                            <InputNumber class="form-control" id="salaryInput" @bind-Value="_adult.JobTitle.Salary"/>
+                        </div>
+                        <div class="form-group" style="margin-left: 20px">
+                            <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Job.png" alt="...">
+                            <label for="jobTitleInput">Job Title</label>
+                            <InputText placeholder="Enter title of your job" class="form-control" id="jobTitleInput" @bind-Value="_adult.JobTitle.JobTitle"/>
+                        </div>
+                    </div>
+                    <h5>Profile picture</h5>
+                    <div class="row" style="margin-left: 3px;">
+                        <InputRadioGroup @bind-Value="ProfilePicture">
+                            <InputRadio Value="_profileDefault"/>
+                            <img style="border-radius: 50%; max-width: 60px; max-height: 60px; margin-right: 20px; margin-left: 5px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileDefault.png" alt="...">
+                            <InputRadio Value="_profileMale"/>
+                            <img style="border-radius: 50%; max-width: 60px; max-height: 60px; margin-right: 20px; margin-left: 5px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileMale.png" alt="...">
+                            <InputRadio Value="_profileFemale"/>
+                            <img style="border-radius: 50%; max-width: 60px; max-height: 60px; margin-right: 20px; margin-left: 5px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileFemale.png" alt="...">
+                            <InputRadio Value="_profileUrl"/>
+                            <InputText style="max-width: 250px; margin-left: 5px" placeholder="Or enter URL to image" class="form-control" @bind-Value="@_ownUrl"/>
+                        </InputRadioGroup>
+                        <button style="margin-left: 100px; max-height: 40px" type="submit" class="btn btn-success">Edit Adult</button>
+                    </div>
+                    <p>@error</p>
+                </EditForm>
             </div>
-            <h5>Other infromation</h5>
-            <div class="row" style="margin-left: 3px;">
-                <div class="form-group">
-                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Hair.png" alt="...">
-                    <label for="hairColorInput">Hair Color</label>
-                    <InputText placeholder="Enter color of hair" class="form-control" id="hairColorInput" @bind-Value="_adult.HairColor"/>
-                </div>
-                <div class="form-group" style="margin-left: 20px">
-                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Eye.png" alt="...">
-                    <label for="eyeColorInput">Eye Color</label>
-                    <InputText placeholder="Enter color of eye" class="form-control" id="eyeColorInput" @bind-Value="_adult.EyeColor"/>
-                </div>
-                <div class="form-group" style="margin-left: 20px">
-                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Sex.png" alt="...">
-                    <label for="sexInput">Sex</label>
-                    <InputText placeholder="Enter your sex" class="form-control" id="sexInput" @bind-Value="_adult.Sex"/>
-                </div>
-            </div>
-            <div class="row" style="margin-left: 3px;">
-                <div class="form-group">
-                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Age.png" alt="...">
-                    <label for="ageInput">Age</label>
-                    <InputNumber class="form-control" id="ageInput" @bind-Value="_adult.Age"/>
-                </div>
-                <div class="form-group" style="margin-left: 20px">
-                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Weight.png" alt="...">
-                    <label for="weightInput">Weight</label>
-                    <InputNumber class="form-control" id="weightInput" @bind-Value="_adult.Weight"/>
-                </div>
-                <div class="form-group" style="margin-left: 20px">
-                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Height.png" alt="...">
-                    <label for="heightInput">Height</label>
-                    <InputNumber class="form-control" id="heightInput" @bind-Value="_adult.Height"/>
-                </div>
-            </div>
-            <h5>Job infromation</h5>
-            <div class="row" style="margin-left: 3px;">
-                <div class="form-group">
-                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Income.png" alt="...">
-                    <label for="salaryInput">Salary</label>
-                    <InputNumber class="form-control" id="salaryInput" @bind-Value="_adult.JobTitle.Salary"/>
-                </div>
-                <div class="form-group" style="margin-left: 20px">
-                    <img style="max-width: 20px; max-height: 20px; margin-right: 10px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Job.png" alt="...">
-                    <label for="jobTitleInput">Job Title</label>
-                    <InputText placeholder="Enter title of your job" class="form-control" id="jobTitleInput" @bind-Value="_adult.JobTitle.JobTitle"/>
-                </div>
-            </div>
-            <h5>Profile picture</h5>
-            <div class="row" style="margin-left: 3px;">
-                <InputRadioGroup @bind-Value="ProfilePicture">
-                    <InputRadio Value="_profileDefault"/>
-                    <img style="border-radius: 50%; max-width: 60px; max-height: 60px; margin-right: 20px; margin-left: 5px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileDefault.png" alt="...">
-                    <InputRadio Value="_profileMale" />
-                    <img style="border-radius: 50%; max-width: 60px; max-height: 60px; margin-right: 20px; margin-left: 5px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileMale.png" alt="...">
-                    <InputRadio Value="_profileFemale"/>
-                    <img style="border-radius: 50%; max-width: 60px; max-height: 60px; margin-right: 20px; margin-left: 5px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileFemale.png" alt="...">
-                    <InputRadio Value="_profileUrl"/>
-                    <InputText style="max-width: 250px; margin-left: 5px" placeholder="Or enter URL to image" class="form-control" @bind-Value="@_ownUrl"/>
-                </InputRadioGroup>
-                <button style="margin-left: 100px; max-height: 40px" type="submit" class="btn btn-success">Edit Adult</button>
-            </div>
-            <p>@error</p>
-        </EditForm>
-    </div>
+        }
 </div>
-
-
-@{
-    if (id!=null)
-    {
-        string[] searchOption = {"id",id};
-        _adult = _fileContext.SearchAdult(searchOption)[0];
-    }
-}
+  
 
 @code {
 
     [Parameter]
-    public string id { get; set; }
+    public int id { get; set; }
 
     [Inject]
     public NavigationManager NavigationManager { get; set; }
+
+    private Adult _adult;
     
     string _profileDefault = "profileDefault";
     string _profileMale = "profileMale";
@@ -120,8 +126,18 @@
     
 
     string error = "";
-
-    private Adult _adult = new();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _adult = await _adultService.GetAdultAsync(id);
+        }
+        catch (Exception e)
+        {
+    // update some error label here, or show popup..
+        }
+    }
     
     private void HandleValidSubmit()
     {
@@ -162,7 +178,7 @@
                
             }
             
-            _fileContext.EditAdult(_adult);
+            _adultService.UpdateAdultAsync(id,_adult);
             NavigationManager.NavigateTo("/adults", forceLoad: false);
         }
     }

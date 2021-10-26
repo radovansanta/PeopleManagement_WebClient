@@ -102,6 +102,13 @@ using DNP_Assignment1.Persistence;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/EditAdultForm.razor"
+using DNP_Assignment1.Data.Services;
+
+#line default
+#line hidden
+#nullable disable
     public partial class EditAdultForm : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -110,14 +117,16 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 105 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/EditAdultForm.razor"
+#line 109 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/EditAdultForm.razor"
        
 
     [Parameter]
-    public string id { get; set; }
+    public int id { get; set; }
 
     [Inject]
     public NavigationManager NavigationManager { get; set; }
+
+    private Adult _adult;
     
     string _profileDefault = "profileDefault";
     string _profileMale = "profileMale";
@@ -129,8 +138,18 @@ using DNP_Assignment1.Persistence;
     
 
     string error = "";
-
-    private Adult _adult = new();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _adult = await _adultService.GetAdultAsync(id);
+        }
+        catch (Exception e)
+        {
+    // update some error label here, or show popup..
+        }
+    }
     
     private void HandleValidSubmit()
     {
@@ -171,7 +190,7 @@ using DNP_Assignment1.Persistence;
                
             }
             
-            _fileContext.EditAdult(_adult);
+            _adultService.UpdateAdultAsync(id,_adult);
             NavigationManager.NavigateTo("/adults", forceLoad: false);
         }
     }
@@ -179,7 +198,7 @@ using DNP_Assignment1.Persistence;
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext _fileContext { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultService _adultService { get; set; }
     }
 }
 #pragma warning restore 1591

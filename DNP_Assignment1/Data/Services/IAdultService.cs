@@ -10,6 +10,7 @@ namespace DNP_Assignment1.Data.Services
         Task AddAdultAsync(Adult adult);
         Task RemoveAdultAsync(int adultId);
         Task UpdateAdultAsync(int id, Adult adult);
-        
+        Task<Adult> GetAdultAsync(int id);
+
     }
 }
