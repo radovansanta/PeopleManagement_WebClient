@@ -102,6 +102,13 @@ using DNP_Assignment1.Persistence;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/AdultForm.razor"
+using DNP_Assignment1.Data.Services;
+
+#line default
+#line hidden
+#nullable disable
     public partial class AdultForm : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -110,7 +117,7 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 97 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/AdultForm.razor"
+#line 98 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/AdultForm.razor"
        
     [Inject]
     public NavigationManager NavigationManager { get; set; }
@@ -163,13 +170,7 @@ using DNP_Assignment1.Persistence;
         }
         else
         {
-            if (!_fileContext.IsIdUnique(_adult.Id))
-            {
-                error = "Not unique id";
-            }
-            else
-            {
-                if (ProfilePicture.Equals("profileDefault"))
+            if (ProfilePicture.Equals("profileDefault"))
                 {
                     _adult.ProfileUrl = "https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/ProfileDefault.png";
                 }
@@ -191,16 +192,17 @@ using DNP_Assignment1.Persistence;
 
                 }
 
-                _fileContext.AddAdult(_adult);
+                
+                _adultService.AddAdultAsync(_adult);
                 NavigationManager.NavigateTo("adults", forceLoad: false);
             }
         }
-    }
+    
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext _fileContext { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultService _adultService { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -119,10 +119,6 @@ using DNP_Assignment1.Data.Services;
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 
-    private async Task  HandleDelete()
-    {
-        await _adultService.RemoveAdultAsync(Adult.Id);
-    }
     
     private void HandleEdit()
     {
