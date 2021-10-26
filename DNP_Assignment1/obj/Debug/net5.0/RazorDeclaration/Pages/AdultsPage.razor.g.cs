@@ -109,13 +109,6 @@ using DNP_Assignment1.Data.Services;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 6 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
-using DNP_Assignment1.Persistence;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/adults")]
     public partial class AdultsPage : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -125,7 +118,7 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 59 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
+#line 57 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
       
     /*
     public string ValueFirstName { get; set; }
@@ -186,7 +179,6 @@ using DNP_Assignment1.Persistence;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultService _adultService { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext _fileContext { get; set; }
     }
 }
 #pragma warning restore 1591

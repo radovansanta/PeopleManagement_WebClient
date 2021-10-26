@@ -1,6 +1,5 @@
 @using Models
-@using DNP_Assignment1.Persistence
-@inject FileContext _fileContext;
+
 
 <div >
     <div style="width: 100%" class="card-header">
@@ -68,7 +67,7 @@
         }
         else
         {
-            _fileContext.AddUser(_user);
+            //_fileContext.AddUser(_user);
             NavigationManager.NavigateTo("/", forceLoad: false);
         }
         

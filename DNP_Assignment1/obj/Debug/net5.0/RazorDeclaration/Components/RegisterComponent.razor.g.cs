@@ -89,13 +89,6 @@ using Models;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/RegisterComponent.razor"
-using DNP_Assignment1.Persistence;
-
-#line default
-#line hidden
-#nullable disable
     public partial class RegisterComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -104,7 +97,7 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 46 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/RegisterComponent.razor"
+#line 45 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/RegisterComponent.razor"
        
     [Inject]
     public NavigationManager NavigationManager { get; set; }
@@ -130,7 +123,7 @@ using DNP_Assignment1.Persistence;
         }
         else
         {
-            _fileContext.AddUser(_user);
+            //_fileContext.AddUser(_user);
             NavigationManager.NavigateTo("/", forceLoad: false);
         }
         
@@ -141,7 +134,6 @@ using DNP_Assignment1.Persistence;
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext _fileContext { get; set; }
     }
 }
 #pragma warning restore 1591
