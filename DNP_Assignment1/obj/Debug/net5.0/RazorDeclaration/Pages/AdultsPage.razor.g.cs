@@ -104,6 +104,13 @@ using DNP_Assignment1.Components;
 #nullable disable
 #nullable restore
 #line 5 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
+using DNP_Assignment1.Data.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
 using DNP_Assignment1.Persistence;
 
 #line default
@@ -118,8 +125,9 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
+#line 59 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
       
+    /*
     public string ValueFirstName { get; set; }
 
     public string ValueLastName { get; set; }
@@ -158,10 +166,26 @@ using DNP_Assignment1.Persistence;
         searchOption[0] = "";
         searchOption[1] = "";
     }
+    */
+
+    private IList<Adult> allAdults;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            allAdults = await _adultService.GetAdultsAsync();
+        }
+        catch (Exception e)
+        {
+    // update some error label here, or show popup..
+        }
+    }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultService _adultService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext _fileContext { get; set; }
     }
 }

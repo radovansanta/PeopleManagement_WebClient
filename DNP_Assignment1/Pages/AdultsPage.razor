@@ -2,40 +2,62 @@
 @using Models
 @using System.Collections.Generic;
 @using DNP_Assignment1.Components
+@using DNP_Assignment1.Data.Services
 @using DNP_Assignment1.Persistence
 @inject FileContext _fileContext;
+@inject IAdultService _adultService;
 
 <Search></Search>
 
 <div class="content px-4">
     <h1>All Adults</h1>
-    <h5><span style="color: white" class="badge bg-secondary">Search by:</span></h5>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <input class="form-control" placeholder="First name"  value="@ValueFirstName" @oninput="OnInputChangeFisrtName"/>
-            </div>
-            <div class="col-sm">
-                <input class="form-control" placeholder="Last name"  value="@ValueLastName" @oninput="OnInputChangeLastName"/>
-            </div>
-            <div class="col-sm">
-                <input class="form-control" placeholder="ID"  value="@ValueId" @oninput="OnInputChangeId"/>
-            </div>
+    
+<!--
+<h5><span style="color: white" class="badge bg-secondary">Search by:</span></h5>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <input class="form-control" placeholder="First name"  value="" @oninput=""/>
+        </div>
+        <div class="col-sm">
+            <input class="form-control" placeholder="Last name"  value="" @oninput=""/>
+        </div>
+        <div class="col-sm">
+            <input class="form-control" placeholder="ID"  value="" @oninput=""/>
         </div>
     </div>
+</div>
+-->
 
+    
+    @if (allAdults == null)
+    {
+        <p>
+            <em>Loading...</em>
+        </p>
+    }
+    else if (!allAdults.Any())
+    {
+        <p>
+            <em>No ToDo items exist. Please add some.</em>
+        </p>
+    }
+    @if (allAdults != null)
+    {
+        <div class="card-columns">
+            @foreach (var adult in allAdults)
+            {
+                <AdultContainer adult=@adult/>
+            }
+        </div>
 
-    <div class="card-columns">
-        @foreach (var adult in _fileContext.SearchAdult(searchOption))
-        {
-            <AdultContainer adult=@adult/>
-        }
-    </div>
+    }
 </div>
 
 
 
 @code{
+    /*
     public string ValueFirstName { get; set; }
 
     public string ValueLastName { get; set; }
@@ -73,5 +95,20 @@
     {
         searchOption[0] = "";
         searchOption[1] = "";
+    }
+    */
+
+    private IList<Adult> allAdults;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            allAdults = await _adultService.GetAdultsAsync();
+        }
+        catch (Exception e)
+        {
+    // update some error label here, or show popup..
+        }
     }
 }

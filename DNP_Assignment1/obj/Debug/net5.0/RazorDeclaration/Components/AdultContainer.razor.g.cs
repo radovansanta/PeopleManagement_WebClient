@@ -96,6 +96,13 @@ using DNP_Assignment1.Persistence;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/AdultContainer.razor"
+using DNP_Assignment1.Data.Services;
+
+#line default
+#line hidden
+#nullable disable
     public partial class AdultContainer : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -104,7 +111,7 @@ using DNP_Assignment1.Persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 65 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/AdultContainer.razor"
+#line 66 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/AdultContainer.razor"
        
     [Parameter]  
     public Adult Adult { get; set; }
@@ -112,10 +119,9 @@ using DNP_Assignment1.Persistence;
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 
-    private void HandleDelete()
+    private async Task  HandleDelete()
     {
-        _fileContext.DeleteAdult(Adult);
-        NavigationManager.NavigateTo("/");
+        await _adultService.RemoveAdultAsync(Adult.Id);
     }
     
     private void HandleEdit()
@@ -124,11 +130,23 @@ using DNP_Assignment1.Persistence;
         NavigationManager.NavigateTo(url);
     }
     
+    private async Task RemoveAdult(int adultId)
+    {
+        try
+        {
+            await _adultService.RemoveAdultAsync(adultId);
+        }
+        catch (Exception e)
+        {
+    // update some error label here, or show popup..
+        }
+    }
+
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext _fileContext { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultService _adultService { get; set; }
     }
 }
 #pragma warning restore 1591

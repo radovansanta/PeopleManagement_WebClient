@@ -1,6 +1,7 @@
 @using Models
 @using DNP_Assignment1.Persistence
-@inject FileContext _fileContext;
+@using DNP_Assignment1.Data.Services
+@inject IAdultService _adultService;
 
 <div style="margin: 10px" class="card">
         <div class="card-body">
@@ -55,7 +56,7 @@
             </div>
             <div class="row">
                 <div class="row">
-                    <button @onclick="HandleDelete" style="margin-left: 30px; margin-right: 10px; margin-top: 10px" type="button" class="btn btn-danger btn-sm">Delete</button>
+                    <button @onclick="@(() => RemoveAdult(Adult.Id))" style="margin-left: 30px; margin-right: 10px; margin-top: 10px" type="button" class="btn btn-danger btn-sm">Delete</button>
                     <button style="margin-right: 10px; margin-top: 10px" class="btn btn-warning btn-sm"  @onclick="HandleEdit">Edit</button>
                 </div>
             </div>
@@ -69,10 +70,9 @@
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 
-    private void HandleDelete()
+    private async Task  HandleDelete()
     {
-        _fileContext.DeleteAdult(Adult);
-        NavigationManager.NavigateTo("/");
+        await _adultService.RemoveAdultAsync(Adult.Id);
     }
     
     private void HandleEdit()
@@ -81,4 +81,16 @@
         NavigationManager.NavigateTo(url);
     }
     
+    private async Task RemoveAdult(int adultId)
+    {
+        try
+        {
+            await _adultService.RemoveAdultAsync(adultId);
+        }
+        catch (Exception e)
+        {
+    // update some error label here, or show popup..
+        }
+    }
+
 }
