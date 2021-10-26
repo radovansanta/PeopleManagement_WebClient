@@ -1,5 +1,8 @@
 @page "/"
 @using DNP_Assignment1.Components
+@using DNP_Assignment1.Data.Services
+@using Models
+@inject IAdultService _adultService;
 
 
 <div style="position: relative; text-align: center;" class="container">
@@ -35,13 +38,24 @@
                     <h6>Radovan Santa</h6>
                     <p>I am a young programmer and UI/UX designer who study Software Engineering in Denmark.</p>
                     <h6>Find me on</h6>
-                                <div style="margin-top: 5px" class="row">
-                                    <a href="https://www.facebook.com/radovan.santa.1"><img style="max-width: 20px; max-height: 20px; margin-left: 20px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Facebook.png" alt="..."></a>
-                                    <a href="https://www.linkedin.com/in/radovan-š-7aa737134/"><img style="max-width: 20px; max-height: 20px; margin-left: 15px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/LinkedIn.png" alt="..."></a>
-                                    <a href="https://github.com/radovansanta"><img style="max-width: 20px; max-height: 20px; margin-left: 15px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Github.png" alt="..."></a>
-                                </div>
+                    <div style="margin-top: 5px" class="row">
+                        <a href="https://www.facebook.com/radovan.santa.1"><img style="max-width: 20px; max-height: 20px; margin-left: 20px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Facebook.png" alt="..."></a>
+                        <a href="https://www.linkedin.com/in/radovan-š-7aa737134/"><img style="max-width: 20px; max-height: 20px; margin-left: 15px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/LinkedIn.png" alt="..."></a>
+                        <a href="https://github.com/radovansanta"><img style="max-width: 20px; max-height: 20px; margin-left: 15px" src="https://raw.githubusercontent.com/radovansanta/DNP_Assignment1/master/DNP_Assignment1/Images/Github.png" alt="..."></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@code{
+    private IList<Adult> allTodos;
+
+    protected override async Task OnInitializedAsync()
+    {
+        allTodos = await _adultService.GetAdultsAsync();
+        await Console.Out.WriteLineAsync(allTodos.Count.ToString());
+    }
+}
+

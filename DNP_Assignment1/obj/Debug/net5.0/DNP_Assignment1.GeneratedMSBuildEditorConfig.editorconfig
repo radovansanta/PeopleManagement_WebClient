@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = DNP_Assignment1
-build_property.ProjectDir = /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/
+build_property.ProjectDir = /Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/

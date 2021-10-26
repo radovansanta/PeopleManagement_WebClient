@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DNP_Assignment1.Data;
 using DNP_Assignment1.Data.Impl;
+using DNP_Assignment1.Data.Services;
 using DNP_Assignment1.Persistence;
 using Microsoft.AspNetCore.Components.Authorization;
 
@@ -37,6 +38,7 @@ namespace DNP_Assignment1
             services.AddSingleton<FileContext>();
             services.AddScoped<IUserService, InMemoryUserService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+            services.AddSingleton<IAdultService, CloudAdultService>();
             
             
             services.AddAuthorization(options => {

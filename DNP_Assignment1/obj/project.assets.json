@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/DNP_Assignment1.csproj",
+      "projectUniqueName": "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/DNP_Assignment1.csproj",
       "projectName": "DNP_Assignment1",
-      "projectPath": "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/DNP_Assignment1.csproj",
+      "projectPath": "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/DNP_Assignment1.csproj",
       "packagesPath": "/Users/radovansanta/.nuget/packages/",
-      "outputPath": "/Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/",
+      "outputPath": "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/radovansanta/.nuget/NuGet/NuGet.Config"
