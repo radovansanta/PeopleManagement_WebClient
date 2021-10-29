@@ -5,7 +5,6 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using DNP_Assignment1.Data.Services.UserServices;
 using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.JSInterop;
 using Models;
 
@@ -13,7 +12,7 @@ using Models;
 namespace DNP_Assignment1.Authentication
 {
 public class CustomAuthenticationStateProvider : AuthenticationStateProvider {
-   private readonly IJSRuntime jsRuntime;
+        private readonly IJSRuntime jsRuntime;
         private readonly IUserService userService;
         private User cachedUser;
 

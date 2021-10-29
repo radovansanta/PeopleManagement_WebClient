@@ -1,6 +1,7 @@
 using System;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Models;
@@ -28,6 +29,19 @@ namespace DNP_Assignment1.Data.Services.UserServices
                 return resultUser;
             } 
             throw new Exception("User not found");
+        }
+
+        public async Task AddUserAsync(User user)
+        {
+            string userAsJson = JsonSerializer.Serialize(user);
+            HttpContent content = new StringContent(userAsJson,
+                Encoding.UTF8,
+                "application/json");
+            HttpResponseMessage response = await client.PostAsync(uri + "/User", content);
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"Error, {response.StatusCode}, {response.ReasonPhrase}");
+            }
         }
     }
 }
