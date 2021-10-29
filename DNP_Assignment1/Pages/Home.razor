@@ -1,8 +1,8 @@
 @page "/"
 @using DNP_Assignment1.Components
 @using DNP_Assignment1.Data.Services
+@using DNP_Assignment1.Data.Services.AdultServices
 @using Models
-@inject IAdultService _adultService;
 
 
 <div style="position: relative; text-align: center;" class="container">
@@ -49,13 +49,4 @@
     </div>
 </div>
 
-@code{
-    private IList<Adult> allTodos;
-
-    protected override async Task OnInitializedAsync()
-    {
-        allTodos = await _adultService.GetAdultsAsync();
-        await Console.Out.WriteLineAsync(allTodos.Count.ToString());
-    }
-}
 

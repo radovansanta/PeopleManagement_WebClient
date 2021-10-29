@@ -96,6 +96,13 @@ using DNP_Assignment1.Data.Services;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/AdultContainer.razor"
+using DNP_Assignment1.Data.Services.AdultServices;
+
+#line default
+#line hidden
+#nullable disable
     public partial class AdultContainer : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -104,7 +111,7 @@ using DNP_Assignment1.Data.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 65 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/AdultContainer.razor"
+#line 66 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/AdultContainer.razor"
        
     [Parameter]  
     public Adult Adult { get; set; }

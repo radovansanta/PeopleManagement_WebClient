@@ -102,6 +102,13 @@ using DNP_Assignment1.Data.Services;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/EditAdultForm.razor"
+using DNP_Assignment1.Data.Services.AdultServices;
+
+#line default
+#line hidden
+#nullable disable
     public partial class EditAdultForm : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -110,7 +117,7 @@ using DNP_Assignment1.Data.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 108 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/EditAdultForm.razor"
+#line 109 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/EditAdultForm.razor"
        
 
     [Parameter]

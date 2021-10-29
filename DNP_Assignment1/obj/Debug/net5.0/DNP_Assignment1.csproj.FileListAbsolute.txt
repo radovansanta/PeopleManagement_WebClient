@@ -74,7 +74,6 @@
 /Users/radovansanta/RiderProjects/DNP_Assignment1/DNP_Assignment1/obj/Debug/net5.0/Razor/Components/RegisterComponent.razor.g.cs
 /Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/bin/Debug/net5.0/appsettings.Development.json
 /Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/bin/Debug/net5.0/appsettings.json
-/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/bin/Debug/net5.0/users.json
 /Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/bin/Debug/net5.0/DNP_Assignment1.StaticWebAssets.xml
 /Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/bin/Debug/net5.0/DNP_Assignment1.deps.json
 /Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/bin/Debug/net5.0/DNP_Assignment1.runtimeconfig.json

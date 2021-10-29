@@ -103,7 +103,7 @@ using DNP_Assignment1.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/LoginComponent.razor"
+#line 46 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/LoginComponent.razor"
            
     private string username;
     private string password;
@@ -111,11 +111,15 @@ using DNP_Assignment1.Authentication;
 
     public async Task PerformLogin() {
         errorMessage = "";
-        try {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+        try
+        {
+            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             username = "";
             password = "";
-        } catch (Exception e) {
+            NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
             errorMessage = e.Message;
         }
     }

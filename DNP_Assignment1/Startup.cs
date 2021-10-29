@@ -6,8 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DNP_Assignment1.Data;
-using DNP_Assignment1.Data.Impl;
-using DNP_Assignment1.Data.Services;
+using DNP_Assignment1.Data.Services.AdultServices;
+using DNP_Assignment1.Data.Services.UserServices;
 using Microsoft.AspNetCore.Components.Authorization;
 
 namespace DNP_Assignment1
@@ -28,26 +28,10 @@ namespace DNP_Assignment1
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
-            services.AddScoped<IUserService, InMemoryUserService>();
-            //services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             services.AddSingleton<IAdultService, CloudAdultService>();
-            
-            /*
-            services.AddAuthorization(options => {
-                options.AddPolicy("SecurityLevel1",  a => 
-                    a.RequireAuthenticatedUser().RequireClaim("Level", "2"));
-                
-                options.AddPolicy("SecurityLevel4",  a => 
-                    a.RequireAuthenticatedUser().RequireClaim("Level", "4","5"));
-                
-                options.AddPolicy("SecurityLevel2", policy =>
-                    policy.RequireAuthenticatedUser().RequireAssertion(context => {
-                        Claim levelClaim = context.User.FindFirst(claim => claim.Type.Equals("Level"));
-                        if (levelClaim == null) return false;
-                        return int.Parse(levelClaim.Value) >= 2;
-                    }));
-            });
-            */
+            services.AddScoped<IUserService, CloudUserService>();
+            services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

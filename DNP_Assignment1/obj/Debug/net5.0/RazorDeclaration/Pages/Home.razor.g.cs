@@ -98,6 +98,13 @@ using DNP_Assignment1.Data.Services;
 #nullable disable
 #nullable restore
 #line 4 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/Home.razor"
+using DNP_Assignment1.Data.Services.AdultServices;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/Home.razor"
 using Models;
 
 #line default
@@ -111,21 +118,6 @@ using Models;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 52 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/Home.razor"
-      
-    private IList<Adult> allTodos;
-
-    protected override async Task OnInitializedAsync()
-    {
-        allTodos = await _adultService.GetAdultsAsync();
-        await Console.Out.WriteLineAsync(allTodos.Count.ToString());
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultService _adultService { get; set; }
     }
 }
 #pragma warning restore 1591

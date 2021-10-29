@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Models;
 
-namespace DNP_Assignment1.Data.Services
+namespace DNP_Assignment1.Data.Services.AdultServices
 {
     public interface IAdultService
     {

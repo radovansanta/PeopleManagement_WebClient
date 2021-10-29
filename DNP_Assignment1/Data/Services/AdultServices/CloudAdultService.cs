@@ -6,11 +6,11 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Models;
 
-namespace DNP_Assignment1.Data.Services
+namespace DNP_Assignment1.Data.Services.AdultServices
 {
     public class CloudAdultService : IAdultService
     {
-        private string uri = "http://localhost:1235";
+        private string uri = "http://localhost:1234";
         private readonly HttpClient client;
         
         public CloudAdultService()
