@@ -10,10 +10,17 @@ namespace DNP_Assignment1.Data.Services.UserServices
     public class CloudUserService : IUserService
     {
         
+        private readonly HttpClient client;
+        private string uri = "http://localhost:1234/user/";
+        
+        public CloudUserService()
+        {
+            client = new HttpClient();
+        }
+        
         public async Task<User> ValidateUserAsync(string email, string password)
         {
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync("http://localhost:1234/User/"+email+","+password);
+            HttpResponseMessage response = await client.GetAsync(uri+email+","+password);
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 string userAsJson = await response.Content.ReadAsStringAsync();
