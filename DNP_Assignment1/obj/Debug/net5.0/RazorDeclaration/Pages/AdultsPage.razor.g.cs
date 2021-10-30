@@ -127,54 +127,71 @@ using DNP_Assignment1.Data.Services.AdultServices;
 #nullable restore
 #line 58 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
       
-    /*
-    public string ValueFirstName { get; set; }
-
-    public string ValueLastName { get; set; }
-
-    public string ValueId { get; set; }
-
-    [Parameter]
-    public EventCallback<string> ValueChanged { get; set; }
-    
-    string[] searchOption = {"",""};
-    
-    private async Task OnInputChangeFisrtName(ChangeEventArgs args )
-    {
-        ValueFirstName = (string)args.Value;
-        searchOption[0] = "firstName";
-        searchOption[1] = ValueFirstName;
-        await ValueChanged.InvokeAsync(ValueFirstName);
-    }
-    private async Task OnInputChangeLastName(ChangeEventArgs args )
-    {
-        ValueLastName = (string)args.Value;
-        searchOption[0] = "lastName";
-        searchOption[1] = ValueLastName;
-        await ValueChanged.InvokeAsync(ValueLastName);
-    }
-    private async Task OnInputChangeId(ChangeEventArgs args )
-    {
-        ValueId = (string)args.Value;
-        searchOption[0] = "id";
-        searchOption[1] = ValueId;
-        await ValueChanged.InvokeAsync(ValueId);
-    }
-    
-    private void Reload()
-    {
-        searchOption[0] = "";
-        searchOption[1] = "";
-    }
-    */
-
     private IList<Adult> allAdults;
+    private IList<Adult> adultsToShow;
+    
+    private string? filterById;
+    private string? filterByFisrtName;
+    private string? filterByLastName;
+    
+    
+    private void FilterById(ChangeEventArgs changeEventArgs) {
+        filterById = null;
+        filterByFisrtName = null;
+        filterByLastName = null;
+        try {
+            filterById = changeEventArgs.Value.ToString();
+        } catch (Exception e) { }
+        ExecuteFilter();
+    }
+    
+    private void FilterByFirstName(ChangeEventArgs changeEventArgs) {
+        filterById = null;
+        filterByFisrtName = null;
+        filterByLastName = null;
+        try {
+            filterByFisrtName = changeEventArgs.Value.ToString();
+        } catch (Exception e) { }
+        ExecuteFilter();
+    }
+    
+    private void FilterByLastName(ChangeEventArgs changeEventArgs) {
+        filterById = null;
+        filterByFisrtName = null;
+        filterByLastName = null;
+        try {
+            filterByLastName = changeEventArgs.Value.ToString();
+        } catch (Exception e) { }
+        ExecuteFilter();
+    }
+    
+    private void ExecuteFilter() {
+        if (filterById != null)
+        {
+            adultsToShow = allAdults.Where(t => t.Id.ToString().Contains(filterById)).ToList();
+        }
+        else if (filterByFisrtName != null)
+        {
+            adultsToShow = allAdults.Where(t => t.FirstName.ToString().Contains(filterByFisrtName)).ToList();
+        }
+        else if (filterByLastName != null)
+        {
+            Console.Out.WriteLine(filterByLastName);
+            adultsToShow = allAdults.Where(t => t.LastName.ToString().Contains(filterByLastName)).ToList();
+        }
+        else
+        {
+            adultsToShow = allAdults;
+        }
+    }
 
+    
     protected override async Task OnInitializedAsync()
     {
         try
         {
             allAdults = await _adultService.GetAdultsAsync();
+            adultsToShow = allAdults;
         }
         catch (Exception e)
         {
