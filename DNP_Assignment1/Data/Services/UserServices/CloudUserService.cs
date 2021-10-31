@@ -37,7 +37,7 @@ namespace DNP_Assignment1.Data.Services.UserServices
             HttpContent content = new StringContent(userAsJson,
                 Encoding.UTF8,
                 "application/json");
-            HttpResponseMessage response = await client.PostAsync(uri + "/User", content);
+            HttpResponseMessage response = await client.PostAsync(uri, content);
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception($"Error, {response.StatusCode}, {response.ReasonPhrase}");

@@ -97,21 +97,35 @@ using System.Collections.Generic;
 #nullable disable
 #nullable restore
 #line 4 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
-using DNP_Assignment1.Components;
+using System.Reflection.Metadata;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 5 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
-using DNP_Assignment1.Data.Services;
+using DNP_Assignment1.Components;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 6 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
+using DNP_Assignment1.Data.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
 using DNP_Assignment1.Data.Services.AdultServices;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
+using Microsoft.AspNetCore.Mvc.Filters;
 
 #line default
 #line hidden
@@ -125,7 +139,7 @@ using DNP_Assignment1.Data.Services.AdultServices;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 58 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
+#line 60 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Pages/AdultsPage.razor"
       
     private IList<Adult> allAdults;
     private IList<Adult> adultsToShow;
@@ -159,9 +173,13 @@ using DNP_Assignment1.Data.Services.AdultServices;
         filterById = null;
         filterByFisrtName = null;
         filterByLastName = null;
-        try {
+        try
+        {
             filterByLastName = changeEventArgs.Value.ToString();
-        } catch (Exception e) { }
+        }
+        catch (Exception e)
+        {
+        }
         ExecuteFilter();
     }
     

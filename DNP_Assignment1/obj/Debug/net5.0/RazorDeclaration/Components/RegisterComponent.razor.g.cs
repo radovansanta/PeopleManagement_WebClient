@@ -89,6 +89,13 @@ using Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/RegisterComponent.razor"
+using DNP_Assignment1.Data.Services.UserServices;
+
+#line default
+#line hidden
+#nullable disable
     public partial class RegisterComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -97,7 +104,7 @@ using Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 45 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/RegisterComponent.razor"
+#line 47 "/Users/radovansanta/RiderProjects/PeopleManagement_WebClient/DNP_Assignment1/Components/RegisterComponent.razor"
        
     [Inject]
     public NavigationManager NavigationManager { get; set; }
@@ -123,7 +130,7 @@ using Models;
         }
         else
         {
-            //_fileContext.AddUser(_user);
+            _userService.AddUserAsync(_user);
             NavigationManager.NavigateTo("/", forceLoad: false);
         }
         
@@ -134,6 +141,7 @@ using Models;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserService _userService { get; set; }
     }
 }
 #pragma warning restore 1591

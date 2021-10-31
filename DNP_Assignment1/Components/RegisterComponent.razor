@@ -1,4 +1,6 @@
 @using Models
+@using DNP_Assignment1.Data.Services.UserServices
+@inject IUserService _userService;
 
 
 <div >
@@ -67,7 +69,7 @@
         }
         else
         {
-            //_fileContext.AddUser(_user);
+            _userService.AddUserAsync(_user);
             NavigationManager.NavigateTo("/", forceLoad: false);
         }
         

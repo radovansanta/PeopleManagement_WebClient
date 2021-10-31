@@ -82,6 +82,7 @@
         try
         {
             await _adultService.RemoveAdultAsync(adultId);
+            NavigationManager.NavigateTo("/", forceLoad: false);
         }
         catch (Exception e)
         {

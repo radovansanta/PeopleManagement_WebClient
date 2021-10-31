@@ -1,9 +1,11 @@
 @page "/adults"
 @using Models
 @using System.Collections.Generic;
+@using System.Reflection.Metadata
 @using DNP_Assignment1.Components
 @using DNP_Assignment1.Data.Services
 @using DNP_Assignment1.Data.Services.AdultServices
+@using Microsoft.AspNetCore.Mvc.Filters
 @inject IAdultService _adultService;
 
 <Search></Search>
@@ -88,9 +90,13 @@
         filterById = null;
         filterByFisrtName = null;
         filterByLastName = null;
-        try {
+        try
+        {
             filterByLastName = changeEventArgs.Value.ToString();
-        } catch (Exception e) { }
+        }
+        catch (Exception e)
+        {
+        }
         ExecuteFilter();
     }
     

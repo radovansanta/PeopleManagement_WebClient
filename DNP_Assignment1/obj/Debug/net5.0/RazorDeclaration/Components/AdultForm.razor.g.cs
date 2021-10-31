@@ -194,7 +194,7 @@ using DNP_Assignment1.Data.Services.AdultServices;
 
                 
                 _adultService.AddAdultAsync(_adult);
-                NavigationManager.NavigateTo("adults", forceLoad: false);
+                NavigationManager.NavigateTo("/", forceLoad: false);
             }
         }
     

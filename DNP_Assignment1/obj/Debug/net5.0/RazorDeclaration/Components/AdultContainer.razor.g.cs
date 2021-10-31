@@ -131,6 +131,7 @@ using DNP_Assignment1.Data.Services.AdultServices;
         try
         {
             await _adultService.RemoveAdultAsync(adultId);
+            NavigationManager.NavigateTo("/", forceLoad: false);
         }
         catch (Exception e)
         {
